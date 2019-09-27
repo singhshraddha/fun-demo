@@ -84,7 +84,7 @@ To also register the functions and constants associated with the entity type, sp
 entity.register(raise_error=False)
 # You must unregister_functions if you change the mehod signature or required inputs.
 #db.unregister_functions(["DataHTTPPreload"])
-db.register_functions([DemoHTTPPreload])
+#db.register_functions([DemoHTTPPreload])
 
 '''
 To test the execution of kpi calculations defined for the entity type locally

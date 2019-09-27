@@ -296,7 +296,7 @@ class DemoHTTPPreload(BasePreload):
         '''
         # define arguments that behave as function inputs
         inputs = []
-        inputs.append(ui.UISingle(name='lookback period days',
+        inputs.append(ui.UISingle(name='username',
                               datatype=str,
                               description='Username for Building Insignts Instance',
                               tags=['TEXT'],

@@ -2,7 +2,7 @@ import json
 import logging
 from sqlalchemy import Column, Integer, String, Float, DateTime, Boolean, func
 from iotfunctions import bif
-from ai.functions import WeatherHTTPPreload
+from ai.functions import DemoHTTPPreload
 from iotfunctions.metadata import EntityType
 from iotfunctions.db import Database
 from iotfunctions.enginelog import EngineLogging
@@ -43,7 +43,7 @@ To do anything with IoT Platform Analytics, you will need one or more entity typ
 You can create entity types through the IoT Platform or using the python API as shown below.
 The database schema is only needed if you are not using the default schema. You can also rename the timestamp.
 '''
-entity_name = 'EnergySystemModel02'
+entity_name = 'ManufacturingSystem01'
 #db.drop_table(entity_name, schema = db_schema)
 
 # Credentials to access Building Insights API.
@@ -60,7 +60,7 @@ entity = EntityType(entity_name,db,
                     Column('TURBINE_ID',String(50)),
                     Column('TEMPERATURE',Float()),
                     Column('PRESSURE',Float()),
-                    WeatherHTTPPreload( username = BI_USERNAME,
+                    DemoHTTPPreload( username = BI_USERNAME,
                                     password = BI_PASSWORD,
                                     request='GET',
                                     url="https://turbine-simulator.mybluemix.net/v1/api/reading",
@@ -84,7 +84,7 @@ To also register the functions and constants associated with the entity type, sp
 entity.register(raise_error=False)
 # You must unregister_functions if you change the mehod signature or required inputs.
 #db.unregister_functions(["DataHTTPPreload"])
-#db.register_functions([WeatherHTTPPreload])
+db.register_functions([DemoHTTPPreload])
 
 '''
 To test the execution of kpi calculations defined for the entity type locally

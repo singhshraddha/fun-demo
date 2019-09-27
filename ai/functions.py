@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 PACKAGE_URL = 'git+https://github.com/fe01134/fun-demo@'
 
 
-class WeatherHTTPPreload(BasePreload):
+class DemoHTTPPreload(BasePreload):
     '''
     Do a HTTP request as a preload activity. Load results of the get into the Entity Type time series table.
     HTTP request is experimental

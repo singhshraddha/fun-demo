@@ -137,7 +137,7 @@ PACKAGE_URL = 'git+https://github.com/fe01134/fun-demo@'
 
 # Change the class name if someone else has already published a function with the same name in your tenant function catalog.
 
-class WeatherHTTPPreload(BasePreload):
+class DemoHTTPPreload(BasePreload):
 ```
 
 * Invoke local_test_of_function.py PYTHONPATH to create your Buildings Entity Type and execute your BI_HTTPPreload function to get data from Building Insights:
@@ -155,7 +155,7 @@ git push origin master
 ```
 * Add function to your new Buildings Entity Type
 ```
-Explore > Entity Types > Buildings > Add Data > Search on WeatherHTTPPreload
+Explore > Entity Types > Buildings > Add Data > Search on DemoHTTPPreload
 ```
 ![Select function ](./images/create_new_data.png)
 

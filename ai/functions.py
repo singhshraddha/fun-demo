@@ -137,6 +137,19 @@ class DemoHTTPPreload(BasePreload):
                 if metric == 'TURBINE_ID':
                     logging.debug( "Found TURBINE_ID %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'TEMP_X':
+                    logging.debug( "Found TEMP_X %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'TEMP_Y':
+                    logging.debug( "Found TEMP_Y %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'PRESS_X':
+                    logging.debug( "Found TEMP_X %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'PRESS_X':
+                    logging.debug( "Found TEMP_X %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+
 
             logging.debug( "net_metrics_data %s " %net_metrics_data )
             rows = len(net_metrics_data)

@@ -246,9 +246,12 @@ class DemoHTTPPreload(BasePreload):
             logging.debug('categoricals %s ' %c)
             #  There is a bug in Analytics service that required caps for attributes
             # convert sqlalchemy.sql.elements.quoted_name to a string
+            '''
             metrics_uppercase_str =  c.casefold().upper()
-            logging.debug('metrics data m %s ' %metrics_uppercase_str )
+            logging.debug('metrics data c %s ' %metrics_uppercase_str )
             response_data[ c ] = np.array( metrics_json[ metrics_uppercase_str ] )
+            '''
+            response_data[ c ] = np.array( metrics_json[ c ] )
             logging.debug('dates data %s ' %response_data[c])
 
         '''

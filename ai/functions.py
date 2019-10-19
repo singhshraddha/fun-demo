@@ -149,7 +149,15 @@ class DemoHTTPPreload(BasePreload):
                 if metric == 'PRESS_Y':
                     logging.debug( "Found TEMP_Y %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
-
+                if metric == 'CLIENT':
+                    logging.debug( "Found CLIENT %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'ORG':
+                    logging.debug( "Found ORG %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'FUNCTION':
+                    logging.debug( "Found FUNCTION %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
 
             logging.debug( "net_metrics_data %s " %net_metrics_data )
             rows = len(net_metrics_data)
@@ -234,7 +242,14 @@ class DemoHTTPPreload(BasePreload):
             response_data[d] = dt.datetime.utcnow() - dt.timedelta(seconds=15)
             logging.debug('dates data %s ' %response_data[d])
 
-
+        for c in categoricals:
+            logging.debug('categoricals %s ' %c)
+            #  There is a bug in Analytics service that required caps for attributes
+            # convert sqlalchemy.sql.elements.quoted_name to a string
+            metrics_uppercase_str =  c.casefold().upper()
+            logging.debug('metrics data m %s ' %metrics_uppercase_str )
+            response_data[ c ] = np.array( metrics_json[ metrics_uppercase_str ] )
+            logging.debug('dates data %s ' %response_data[c])
 
         '''
         # Create Numpy array using remaining entity metrics

@@ -51,7 +51,7 @@ entity = Mfg_Line(name = entity_type_name,
                 db = db,
                 db_schema = db_schema,
                 description = "Manufacturing Operations Command Center",
-                generate_days = 10,
+                generate_days = 1,
                 drop_existing = False)
 
 entity.register(raise_error=False)

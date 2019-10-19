@@ -216,12 +216,13 @@ class DemoHTTPPreload(BasePreload):
             schema= schema,
             exclude_cols = []
         )
-        '''
-        for m in metrics:
-            logging.debug('metrics %s ' %m)
-            response_data[m] = np.random.normal(0,1,rows)
-            logging.debug('metrics data %s ' %response_data[m])
-        '''
+
+        for o in others:
+            logging.debug('metrics others %s ' %o)
+            #response_data[0] = np.random.normal(0,1,rows)
+            #response_data[0] = np.random.normal(0,1,rows)
+            #logging.debug('metrics data %s ' %response_data[m])
+
         for m in metrics:
             logging.debug('metrics  -- using str  %s ' %m )
             logging.debug('type is %s ' %type(m) )
@@ -242,17 +243,13 @@ class DemoHTTPPreload(BasePreload):
             response_data[d] = dt.datetime.utcnow() - dt.timedelta(seconds=15)
             logging.debug('dates data %s ' %response_data[d])
 
-        for c in categoricals:
-            logging.debug('categoricals %s ' %c)
-            #  There is a bug in Analytics service that required caps for attributes
-            # convert sqlalchemy.sql.elements.quoted_name to a string
-            metrics_uppercase_str =  c.casefold().upper()
-            logging.debug('metrics data c %s ' %metrics_uppercase_str )
-            # List of string
-            listOfDimensions = ['CLIENT' , 'ORGANIZATION', 'FUNCTION']
-            if c in listOfDimensions:
-                response_data[ c ] = np.array( metrics_json[ metrics_uppercase_str ] )
-                logging.debug('caetgorical data %s ' %response_data[c])
+        '''
+        Set dimensional data
+        hardcode for now
+        '''
+        response_data[ 'CLIENT' ] = np.array(  ['Mariners Way MFG', 'Mariners Way MFG'] )
+        response_data[ 'ORGANIZATION' ] = np.array( ['Production', 'Production']  )
+        response_data[ 'FUNCTION' ] = np.array( ['Line 1', 'Line 2']  )
 
         '''
         # Create Numpy array using remaining entity metrics

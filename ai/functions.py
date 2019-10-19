@@ -247,9 +247,9 @@ class DemoHTTPPreload(BasePreload):
         Set dimensional data
         hardcode for now
         '''
-        response_data[ 'CLIENT' ] = np.array(  ['Mariners Way MFG', 'Mariners Way MFG'] )
-        response_data[ 'ORGANIZATION' ] = np.array( ['Production', 'Production']  )
-        response_data[ 'FUNCTION' ] = np.array( ['Line 1', 'Line 2']  )
+        response_data[ 'CLIENT' ] =  ['Mariners Way MFG', 'Mariners Way MFG']
+        response_data[ 'ORGANIZATION' ] =  ['Production', 'Production']
+        response_data[ 'FUNCTION' ] =  ['Line 1', 'Line 2']  
 
         '''
         # Create Numpy array using remaining entity metrics

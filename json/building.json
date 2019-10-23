@@ -1,0 +1,117 @@
+{
+    "description": "Enterprise level location",
+    "guid": "iotbi272",
+    "display_name": "iotbi272",
+    "p": {},
+    "ctime": 1553022604292,
+    "mtime": 1553022604361,
+    "instanceOf": "Building_Campus",
+    "coordinates": {
+        "type": "Point",
+        "coordinates": [
+            12.95226468,
+            77.64390053
+        ],
+        "crs": {
+            "type": "name",
+            "properties": {
+                "name": "EPSG:4326"
+            }
+        }
+    },
+    "refin": [
+        {
+            "src": "C4P-C",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "ESTATE_OCCUPANCY_SENSOR",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "IEA-B05",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "iotbi272_TOTAL",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "IEA-B02",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "IEA-B04",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "K1Z-K1Z",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "PLP-B706",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "IEA-B03",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "PLP-B008",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "K3E-OSLO",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "IEA-B01",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "IEA-B06",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "C4P-D",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "PLP-B052",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "PLP-B707",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "PLP-B705",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        },
+        {
+            "src": "HUR-BDEAST",
+            "tgt": "iotbi272",
+            "refType": "hasLocation"
+        }
+    ],
+    "filekey": false,
+    "jsonkey": false,
+    "timeserieskey": false
+}

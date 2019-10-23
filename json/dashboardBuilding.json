@@ -1,0 +1,119 @@
+{
+    "cards": [
+        {
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "energy_value",
+                        "label": "Energy Usage MWh"
+                    }
+                ]
+            },
+            "dataSource": {
+              "range": {
+                    "count": -30,
+                    "interval": "day"
+                },
+                "attributes":[
+                {
+                    "attribute": "energy_value",
+                    "id": "energy_value",
+                    "aggregator": "mean"
+                }
+              ]
+            },
+            "id": "energy_value_line",
+            "size": "LARGE",
+            "title": "Energy Usage",
+            "type": "TIMESERIES"
+        },
+        {
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "energy_compare_percent",
+                        "label": "Energy Percentage",
+                        "precision": 3
+                    }
+                ],
+                "timeDataSourceId": "evt_timestamp"
+            },
+            "dataSource": {
+              "range": {
+                    "count": -30,
+                    "interval": "day"
+                },
+                "attributes":[
+                {
+                    "attribute": "energy_compare_percent",
+                    "id": "energy_compare_percent",
+                    "aggregator": "mean"
+                }
+              ]
+            },
+            "id": "energy_value_percentage",
+            "size": "SMALL",
+            "title": "Energy Usage Percentage",
+            "type": "VALUE"
+        },
+        {
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "energy_trend",
+                        "label": "Energy Trend"
+                    }
+                ]
+            },
+            "dataSource": {
+
+              "range": {
+                    "count": -30,
+                    "interval": "day"
+                },
+                "attributes":[
+                {
+                    "attribute": "energy_trend",
+                    "id": "energy_trend",
+                    "aggregator": "mean"
+                }
+            ]
+          },
+            "id": "energy_trend",
+            "size": "SMALL",
+            "title": "Energy Trend",
+            "type": "VALUE"
+        },
+        {
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "energy_trend_status",
+                        "label": "Energy Trend"
+                    }
+                ]
+            },
+            "dataSource": {
+
+              "range": {
+                                  "count": -30,
+                                  "interval": "day"
+                              },
+
+
+                "attributes":[
+                {
+                    "attribute": "energy_trend_status",
+                    "id": "energy_trend_status",
+                    "aggregator": "mean"
+                }
+            ]
+          },
+            "id": "energy_trend_status",
+            "size": "SMALL",
+            "title": "Energy Trend Status",
+            "type": "VALUE"
+        }
+    ],
+    "title": "Building Summary"
+}

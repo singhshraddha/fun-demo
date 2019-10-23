@@ -38,7 +38,7 @@ class Mfg_Line (metadata.BaseCustomEntityType):
         columns.append(Column('TURBINE_ID',String(50) ))
         columns.append(Column('TEMPERATURE', Float() ))
         columns.append(Column('PRESSURE', Float() ))
-        columns.append(Column('STEP', String(50) ))
+        columns.append(Column('STEP', Float() ))
         columns.append(Column('TEMP_X', Float() ))
         columns.append(Column('TEMP_Y', Float() ))
         columns.append(Column('PRESS_X', Float() ))
@@ -56,15 +56,15 @@ class Mfg_Line (metadata.BaseCustomEntityType):
         sim = {
             'freq': '5min',
             'auto_entity_count' : 1,
-            'data_item_mean': {'temperature': 22,
-                               'step': "1",
-                               'pressure': 50,
-                               'turbine_id': 1
+            'data_item_mean': {'TEMPERATURE': 22,
+                               'STEP': 1,
+                               'PRESSURE': 50,
+                               'TURBINE_ID': 1
                                },
             'data_item_domain': {
-                'client' : ['Riverside MFG','Collonade MFG','Mariners Way MFG' ],
-                'org': ['Engineering','Supply Chain', 'Production', 'Quality', 'Other'],
-                'function': ['New Products','Packaging','Planning','Warehouse', 'Logistics', 'Customer Service','Line 1', 'Line 2', 'Quality Control', 'Calibration', 'Reliability']
+                'CLIENT' : ['Riverside MFG','Collonade MFG','Mariners Way MFG' ],
+                'ORG': ['Engineering','Supply Chain', 'Production', 'Quality', 'Other'],
+                'FUNCTION': ['New Products','Packaging','Planning','Warehouse', 'Logistics', 'Customer Service','Line 1', 'Line 2', 'Quality Control', 'Calibration', 'Reliability']
             },
             'drop_existing': True
         }

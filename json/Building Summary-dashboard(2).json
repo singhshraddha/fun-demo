@@ -1,0 +1,1985 @@
+{
+    "timeGrain": "hour",
+    "cards": [
+        {
+            "id": "card-carbonDioxide_value_alert-value",
+            "size": "XSMALL",
+            "title": "Alerts",
+            "type": "VALUE",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "count",
+                        "attribute": "carbonDioxide_value_alert",
+                        "id": "carbonDioxide_value_alert"
+                    }
+                ]
+            },
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "carbonDioxide_value_alert",
+                        "label": "Count",
+                        "precision": 0,
+                        "thresholds": [
+                            {
+                                "color": "red",
+                                "comparison": ">=",
+                                "icon": "icon--close--solid",
+                                "value": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "card-humidity_value-value",
+            "size": "XSMALL",
+            "title": "Humidity",
+            "type": "VALUE",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "humidity_value",
+                        "id": "humidity_value"
+                    }
+                ]
+            },
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "humidity_value",
+                        "label": "Current",
+                        "unit": "%",
+                        "precision": 2,
+                        "thresholds": [
+                            {
+                                "color": "red",
+                                "comparison": ">=",
+                                "icon": "icon--close--solid",
+                                "value": 60
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "card-carbonDioxide_value-value",
+            "size": "XSMALL",
+            "title": "Carbon Dioxide",
+            "type": "VALUE",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "carbonDioxide_value",
+                        "id": "carbonDioxide_value"
+                    }
+                ]
+            },
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "carbonDioxide_value",
+                        "label": "Current",
+                        "unit": "PPM",
+                        "precision": 0,
+                        "thresholds": [
+                            {
+                                "color": "orange",
+                                "comparison": ">=",
+                                "icon": "icon--warning--solid",
+                                "value": 800
+                            },
+                            {
+                                "color": "red",
+                                "comparison": ">=",
+                                "icon": "icon--close--solid",
+                                "value": 1000
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "card-temperature_value_f-value",
+            "size": "XSMALL",
+            "title": "Temperature",
+            "type": "VALUE",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "temperature_value_f",
+                        "id": "temperature_value_f"
+                    }
+                ]
+            },
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "temperature_value_f",
+                        "label": "Current",
+                        "unit": "F",
+                        "precision": 2,
+                        "thresholds": [
+                            {
+                                "color": "orange",
+                                "comparison": "<=",
+                                "icon": "icon--warning--solid",
+                                "value": 65
+                            },
+                            {
+                                "color": "orange",
+                                "comparison": ">=",
+                                "icon": "icon--warning--solid",
+                                "value": 76
+                            },
+                            {
+                                "color": "red",
+                                "comparison": ">=",
+                                "icon": "icon--close--solid",
+                                "value": 85
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "card-light_value-value",
+            "size": "XSMALL",
+            "title": "Light",
+            "type": "VALUE",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "light_value",
+                        "id": "light_value"
+                    }
+                ]
+            },
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "light_value",
+                        "label": "Current",
+                        "unit": "LUX",
+                        "precision": 2
+                    }
+                ]
+            }
+        },
+        {
+            "id": "card-pressure_value_hPa-value",
+            "size": "XSMALL",
+            "title": "Pressure",
+            "type": "VALUE",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "pressure_value_hPa",
+                        "id": "pressure_value_hPa"
+                    }
+                ]
+            },
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "pressure_value_hPa",
+                        "label": "Current",
+                        "unit": "hPa",
+                        "precision": 2
+                    }
+                ]
+            }
+        },
+        {
+            "id": "card-sound_value_db-value",
+            "size": "XSMALL",
+            "title": "Noise",
+            "type": "VALUE",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "sound_value_db",
+                        "id": "sound_value_db"
+                    }
+                ]
+            },
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "sound_value_db",
+                        "label": "Current",
+                        "unit": "dB",
+                        "precision": 2,
+                        "thresholds": [
+                            {
+                                "color": "orange",
+                                "comparison": ">=",
+                                "icon": "icon--warning--solid",
+                                "value": 60
+                            },
+                            {
+                                "color": "red",
+                                "comparison": ">=",
+                                "icon": "icon--close--solid",
+                                "value": 80
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "card-carbonDioxide_comfortLevel-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "carbonDioxide_comfortLevel_Building_Summary_mean",
+                        "id": "carbonDioxide_comfortLevel_Building_Summary_mean"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "carbonDioxide_comfortLevel_Building_Summary_mean",
+                        "label": "mean"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "ComfortLevel - Carbon Dioxide"
+            },
+            "size": "MEDIUM",
+            "title": "ComfortLevel (%) - Carbon Dioxide",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-carbonDioxide_value-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "carbonDioxide_value_Building_Summary_mean",
+                        "id": "carbonDioxide_value_Building_Summary_mean"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "carbonDioxide_value_Building_Summary_max",
+                        "id": "carbonDioxide_value_Building_Summary_max"
+                    },
+                    {
+                        "aggregator": "min",
+                        "attribute": "carbonDioxide_value_Building_Summary_min",
+                        "id": "carbonDioxide_value_Building_Summary_min"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "carbonDioxide_value_Building_Summary_mean",
+                        "label": "mean"
+                    },
+                    {
+                        "dataSourceId": "carbonDioxide_value_Building_Summary_max",
+                        "label": "max"
+                    },
+                    {
+                        "dataSourceId": "carbonDioxide_value_Building_Summary_min",
+                        "label": "min"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "Carbon Dioxide"
+            },
+            "size": "LARGE",
+            "title": "Carbon Dioxide",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-humidity_comfortLevel-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "humidity_comfortLevel_Building_Summary_mean",
+                        "id": "humidity_comfortLevel_Building_Summary_mean"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "humidity_comfortLevel_Building_Summary_mean",
+                        "label": "mean"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "ComfortLevel (%) - Humidity"
+            },
+            "size": "MEDIUM",
+            "title": "ComfortLevel (%) - Humidity",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-humidity_value-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "humidity_value_Building_Summary_mean",
+                        "id": "humidity_value_Building_Summary_mean"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "humidity_value_Building_Summary_max",
+                        "id": "humidity_value_Building_Summary_max"
+                    },
+                    {
+                        "aggregator": "min",
+                        "attribute": "humidity_value_Building_Summary_min",
+                        "id": "humidity_value_Building_Summary_min"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "humidity_value_Building_Summary_mean",
+                        "label": "mean"
+                    },
+                    {
+                        "dataSourceId": "humidity_value_Building_Summary_max",
+                        "label": "max"
+                    },
+                    {
+                        "dataSourceId": "humidity_value_Building_Summary_min",
+                        "label": "min"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "Humidity (%)"
+            },
+            "size": "LARGE",
+            "title": "Humidity (%)",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-light_comfortLevel-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "light_comfortLevel_Building_Summary_mean",
+                        "id": "light_comfortLevel_Building_Summary_mean"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "light_comfortLevel_Building_Summary_mean",
+                        "label": "mean"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "ComfortLevel (%) - Light"
+            },
+            "size": "MEDIUM",
+            "title": "ComfortLevel (%) - Light",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-light_value-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "light_value_Building_Summary_mean",
+                        "id": "light_value_Building_Summary_mean"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "light_value_Building_Summary_max",
+                        "id": "light_value_Building_Summary_max"
+                    },
+                    {
+                        "aggregator": "min",
+                        "attribute": "light_value_Building_Summary_min",
+                        "id": "light_value_Building_Summary_min"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "light_value_Building_Summary_mean",
+                        "label": "mean"
+                    },
+                    {
+                        "dataSourceId": "light_value_Building_Summary_max",
+                        "label": "max"
+                    },
+                    {
+                        "dataSourceId": "light_value_Building_Summary_min",
+                        "label": "min"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "Light (LUX)"
+            },
+            "size": "LARGE",
+            "title": "Light (LUX)",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-motion_isOccupied-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "motion_isOccupied_Building_Summary_mean",
+                        "id": "motion_isOccupied_Building_Summary_mean"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "motion_isOccupied_Building_Summary_max",
+                        "id": "motion_isOccupied_Building_Summary_max"
+                    },
+                    {
+                        "aggregator": "min",
+                        "attribute": "motion_isOccupied_Building_Summary_min",
+                        "id": "motion_isOccupied_Building_Summary_min"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "motion_isOccupied_Building_Summary_mean",
+                        "label": "mean"
+                    },
+                    {
+                        "dataSourceId": "motion_isOccupied_Building_Summary_max",
+                        "label": "max"
+                    },
+                    {
+                        "dataSourceId": "motion_isOccupied_Building_Summary_min",
+                        "label": "min"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "Occupancy (%)"
+            },
+            "size": "LARGE",
+            "title": "Occupancy (%)",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-pressure_comfortLevel-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "pressure_comfortLevel_Building_Summary_mean",
+                        "id": "pressure_comfortLevel_Building_Summary_mean"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "pressure_comfortLevel_Building_Summary_mean",
+                        "label": "mean"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "ComfortLevel (%) - Air Pressure"
+            },
+            "size": "MEDIUM",
+            "title": "ComfortLevel (%) - Air Pressure",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-pressure_value_hPa-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "pressure_value_hPa_Building_Summary_mean",
+                        "id": "pressure_value_hPa_Building_Summary_mean"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "pressure_value_hPa_Building_Summary_max",
+                        "id": "pressure_value_hPa_Building_Summary_max"
+                    },
+                    {
+                        "aggregator": "min",
+                        "attribute": "pressure_value_hPa_Building_Summary_min",
+                        "id": "pressure_value_hPa_Building_Summary_min"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "pressure_value_hPa_Building_Summary_mean",
+                        "label": "mean"
+                    },
+                    {
+                        "dataSourceId": "pressure_value_hPa_Building_Summary_max",
+                        "label": "max"
+                    },
+                    {
+                        "dataSourceId": "pressure_value_hPa_Building_Summary_min",
+                        "label": "min"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "Air Pressure (hPa)"
+            },
+            "size": "LARGE",
+            "title": "Air Pressure (hPa)",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-sound_comfortLevel-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "sound_comfortLevel_Building_Summary_mean",
+                        "id": "sound_comfortLevel_Building_Summary_mean"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "sound_comfortLevel_Building_Summary_mean",
+                        "label": "mean"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "ComfortLevel (%) - Noise"
+            },
+            "size": "MEDIUM",
+            "title": "ComfortLevel (%) - Noise",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-sound_value_db-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "sound_value_db_Building_Summary_mean",
+                        "id": "sound_value_db_Building_Summary_mean"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "sound_value_db_Building_Summary_max",
+                        "id": "sound_value_db_Building_Summary_max"
+                    },
+                    {
+                        "aggregator": "min",
+                        "attribute": "sound_value_db_Building_Summary_min",
+                        "id": "sound_value_db_Building_Summary_min"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "sound_value_db_Building_Summary_mean",
+                        "label": "mean"
+                    },
+                    {
+                        "dataSourceId": "sound_value_db_Building_Summary_max",
+                        "label": "max"
+                    },
+                    {
+                        "dataSourceId": "sound_value_db_Building_Summary_min",
+                        "label": "min"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "Noise (dB)"
+            },
+            "size": "LARGE",
+            "title": "Noise (dB)",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-temperature_value_f-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "temperature_value_f_Building_Summary_mean",
+                        "id": "temperature_value_f_Building_Summary_mean"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "temperature_value_f_Building_Summary_max",
+                        "id": "temperature_value_f_Building_Summary_max"
+                    },
+                    {
+                        "aggregator": "min",
+                        "attribute": "temperature_value_f_Building_Summary_min",
+                        "id": "temperature_value_f_Building_Summary_min"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "temperature_value_f_Building_Summary_mean",
+                        "label": "mean"
+                    },
+                    {
+                        "dataSourceId": "temperature_value_f_Building_Summary_max",
+                        "label": "max"
+                    },
+                    {
+                        "dataSourceId": "temperature_value_f_Building_Summary_min",
+                        "label": "min"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "Temperature (F)"
+            },
+            "size": "LARGE",
+            "title": "Temperature (F)",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-temperature_comfortLevel-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "temperature_comfortLevel_Building_Summary_mean",
+                        "id": "temperature_comfortLevel_Building_Summary_mean"
+                    }
+                ],
+                "range": {
+                    "count": -7,
+                    "interval": "day"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "temperature_comfortLevel_Building_Summary_mean",
+                        "label": "mean"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "ComfortLevel (%) - Temperature"
+            },
+            "size": "MEDIUM",
+            "title": "ComfortLevel (%) - Temperature",
+            "type": "TIMESERIES"
+        },
+        {
+            "content": {
+                "alt": "Occupancy",
+                "zoomMax": 5,
+                "hotspots": [
+                    {
+                        "color": "#FFF",
+                        "content": {
+                            "attributes": [
+                                {
+                                    "dataSourceId": "motion_isOccupied",
+                                    "label": "Occupancy"
+                                }
+                            ]
+                        },
+                        "locations": [
+                            {
+                                "xDataSourceId": "x",
+                                "yDataSourceId": "y"
+                            }
+                        ],
+                        "thresholds": [
+                            {
+                                "color": "blue",
+                                "comparison": "=",
+                                "dataSourceId": "motion_isOccupied",
+                                "icon": "icon--header--user",
+                                "isHotspot": true,
+                                "value": 1
+                            },
+                            {
+                                "color": "grey",
+                                "comparison": "=",
+                                "dataSourceId": "motion_isOccupied",
+                                "icon": "icon--header--user",
+                                "isHotspot": true,
+                                "value": 0
+                            },
+                            {
+                                "color": "grey",
+                                "comparison": ">=",
+                                "dataSourceId": "motion_isOccupied",
+                                "icon": "icon--header--user",
+                                "isHotspot": true,
+                                "value": 0
+                            }
+                        ]
+                    }
+                ],
+                "image": "munich_floor_27"
+            },
+            "dataSource": {
+                "attributes": [
+                    {
+                        "attribute": "motion_isOccupied",
+                        "id": "motion_isOccupied"
+                    },
+                    {
+                        "attribute": "x",
+                        "id": "x"
+                    },
+                    {
+                        "attribute": "y",
+                        "id": "y"
+                    }
+                ],
+                "range": {
+                    "count": -1,
+                    "interval": "hour",
+                    "type": "periodToDate"
+                },
+                "groupBy": [
+                    "deviceid"
+                ]
+            },
+            "id": "occupancy-floor27-image",
+            "size": "MEDIUM",
+            "title": "Occupancy",
+            "type": "IMAGE"
+        },
+        {
+            "content": {
+                "alt": "Comfort Level",
+                "zoomMax": 5,
+                "hotspots": [
+                    {
+                        "color": "#00F",
+                        "icon": "icon--info",
+                        "content": {
+                            "attributes": [
+                                {
+                                    "dataSourceId": "temperature_value_f",
+                                    "label": "Temperature",
+                                    "unit": "F"
+                                },
+                                {
+                                    "dataSourceId": "carbonDioxide_value",
+                                    "label": "CO2",
+                                    "unit": "PPM"
+                                },
+                                {
+                                    "dataSourceId": "humidity_value",
+                                    "label": "Humidity",
+                                    "unit": "%"
+                                },
+                                {
+                                    "dataSourceId": "pressure_value",
+                                    "label": "Pressure",
+                                    "unit": "hPa"
+                                },
+                                {
+                                    "dataSourceId": "light_value",
+                                    "label": "Light",
+                                    "unit": "LUX"
+                                },
+                                {
+                                    "dataSourceId": "sound_value_db",
+                                    "label": "Noise",
+                                    "unit": "dB"
+                                }
+                            ]
+                        },
+                        "locations": [
+                            {
+                                "xDataSourceId": "x",
+                                "yDataSourceId": "y"
+                            }
+                        ],
+                        "thresholds": [
+                            {
+                                "dataSourceId": "carbonDioxide_value",
+                                "comparison": ">=",
+                                "value": 800,
+                                "icon": "icon--warning--solid",
+                                "color": "orange",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "temperature_value_f",
+                                "comparison": "<=",
+                                "value": 65,
+                                "icon": "icon--warning--solid",
+                                "color": "orange",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "temperature_value_f",
+                                "comparison": ">=",
+                                "value": 75,
+                                "icon": "icon--warning--solid",
+                                "color": "orange",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "sound_value_db",
+                                "comparison": ">=",
+                                "value": 60,
+                                "icon": "icon--warning--solid",
+                                "color": "orange",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "temperature_value_f",
+                                "comparison": ">=",
+                                "value": 85,
+                                "icon": "icon--close--solid",
+                                "color": "red",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "carbonDioxide_value",
+                                "comparison": ">=",
+                                "value": 1000,
+                                "icon": "icon--close--solid",
+                                "color": "red",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "humidity_value",
+                                "comparison": ">=",
+                                "value": 60,
+                                "icon": "icon--close--solid",
+                                "color": "red",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "light_value",
+                                "comparison": ">=",
+                                "value": 500000,
+                                "icon": "icon--close--solid",
+                                "color": "red",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "sound_value_db",
+                                "comparison": ">=",
+                                "value": 80,
+                                "icon": "icon--close--solid",
+                                "color": "red",
+                                "isHotspot": true
+                            }
+                        ]
+                    }
+                ],
+                "image": "munich_floor_27"
+            },
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "temperature_value_f",
+                        "id": "temperature_value_f"
+                    },
+                    {
+                        "aggregator": "mean",
+                        "attribute": "carbonDioxide_value",
+                        "id": "carbonDioxide_value"
+                    },
+                    {
+                        "aggregator": "mean",
+                        "attribute": "humidity_value",
+                        "id": "humidity_value"
+                    },
+                    {
+                        "aggregator": "mean",
+                        "attribute": "light_value",
+                        "id": "light_value"
+                    },
+                    {
+                        "aggregator": "mean",
+                        "attribute": "sound_value_db",
+                        "id": "sound_value_db"
+                    },
+                    {
+                        "aggregator": "mean",
+                        "attribute": "pressure_value",
+                        "id": "pressure_value"
+                    },
+                    {
+                        "attribute": "x",
+                        "id": "x"
+                    },
+                    {
+                        "attribute": "y",
+                        "id": "y"
+                    }
+                ],
+                "range": {
+                    "count": -1,
+                    "interval": "hour",
+                    "type": "periodToDate"
+                },
+                "groupBy": [
+                    "deviceid"
+                ]
+            },
+            "id": "temperature-floor27-image",
+            "size": "MEDIUM",
+            "title": "Comfort Level",
+            "type": "IMAGE"
+        },
+        {
+            "id": "carbon-dioxide-alert",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "count",
+                        "attribute": "carbonDioxide_value_alert",
+                        "id": "carbonDioxide_value_alert_count"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "carbonDioxide_value",
+                        "id": "carbonDioxide_value_max"
+                    }
+                ],
+                "range": {
+                    "count": -1,
+                    "interval": "hour",
+                    "type": "periodToDate"
+                },
+                "timeGrain": "hour",
+                "groupBy": [
+                    "deviceid",
+                    "Building",
+                    "Floor",
+                    "Zone"
+                ]
+            },
+            "content": {
+                "columns": [
+                    {
+                        "dataSourceId": "deviceid",
+                        "label": "Workstation"
+                    },
+                    {
+                        "dataSourceId": "carbonDioxide_value_alert_count",
+                        "label": "Alert Count"
+                    },
+                    {
+                        "dataSourceId": "timestamp",
+                        "label": "Alert Time",
+                        "priority": 1,
+                        "type": "TIMESTAMP"
+                    },
+                    {
+                        "dataSourceId": "Building"
+                    },
+                    {
+                        "dataSourceId": "Floor"
+                    },
+                    {
+                        "dataSourceId": "Zone"
+                    }
+                ],
+                "thresholds": [
+                    {
+                        "dataSourceId": "carbonDioxide_value_alert_count",
+                        "comparison": ">",
+                        "value": 0,
+                        "showOnContent": true,
+                        "label": "Severity",
+                        "severity": 1
+                    }
+                ]
+            },
+            "size": "XLARGE",
+            "title": "Alerts",
+            "type": "TABLE"
+        },
+        {
+            "content": {
+                "image": "munich_building",
+                "alt": "Overview",
+                "hideZoomControls": true,
+                "hideMinimap": true,
+                "hotspots": [
+                    {
+                        "color": "#999",
+                        "icon": "icon--error--outline",
+                        "content": {
+                            "attributes": [
+                                {
+                                    "dataSourceId": "carbonDioxide_value_alert",
+                                    "label": "Alerts"
+                                }
+                            ]
+                        },
+                        "locations": [
+                            {
+                                "x": 18.5,
+                                "y": 19
+                            }
+                        ],
+                        "thresholds": [
+                            {
+                                "dataSourceId": "carbonDioxide_value_alert",
+                                "comparison": "=",
+                                "value": 0,
+                                "icon": "icon--checkmark--solid",
+                                "color": "green",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "carbonDioxide_value_alert",
+                                "comparison": ">",
+                                "value": 0,
+                                "icon": "icon--warning--solid",
+                                "color": "red",
+                                "isHotspot": true
+                            }
+                        ]
+                    },
+                    {
+                        "color": "#999",
+                        "icon": "icon--error--outline",
+                        "content": {
+                            "attributes": [
+                                {
+                                    "dataSourceId": "motion_isOccupied_Building_Summary_mean",
+                                    "label": "Occupancy"
+                                }
+                            ]
+                        },
+                        "locations": [
+                            {
+                                "x": 18.5,
+                                "y": 42.1
+                            }
+                        ],
+                        "thresholds": [
+                            {
+                                "dataSourceId": "motion_isOccupied_Building_Summary_mean",
+                                "comparison": ">=",
+                                "value": 0.8,
+                                "icon": "icon--checkmark--solid",
+                                "color": "green",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "motion_isOccupied_Building_Summary_mean",
+                                "comparison": ">=",
+                                "value": 0.6,
+                                "icon": "icon--warning--solid",
+                                "color": "orange",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "motion_isOccupied_Building_Summary_mean",
+                                "comparison": "<",
+                                "value": 0.6,
+                                "icon": "icon--warning--solid",
+                                "color": "red",
+                                "isHotspot": true
+                            }
+                        ]
+                    },
+                    {
+                        "color": "#999",
+                        "icon": "icon--error--outline",
+                        "content": {
+                            "attributes": [
+                                {
+                                    "dataSourceId": "temperature_comfortLevel_Building_Summary_mean",
+                                    "label": "Comfort Level"
+                                }
+                            ]
+                        },
+                        "locations": [
+                            {
+                                "x": 18.5,
+                                "y": 67.1
+                            }
+                        ],
+                        "thresholds": [
+                            {
+                                "dataSourceId": "temperature_comfortLevel_Building_Summary_mean",
+                                "comparison": ">=",
+                                "value": 0.9,
+                                "icon": "icon--checkmark--solid",
+                                "color": "green",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "temperature_comfortLevel_Building_Summary_mean",
+                                "comparison": ">=",
+                                "value": 0.7,
+                                "icon": "icon--warning--solid",
+                                "color": "orange",
+                                "isHotspot": true
+                            },
+                            {
+                                "dataSourceId": "temperature_comfortLevel_Building_Summary_mean",
+                                "comparison": "<",
+                                "value": 0.7,
+                                "icon": "icon--warning--solid",
+                                "color": "red",
+                                "isHotspot": true
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "temperature_comfortLevel_Building_Summary_mean",
+                        "id": "temperature_comfortLevel_Building_Summary_mean"
+                    },
+                    {
+                        "aggregator": "count",
+                        "attribute": "carbonDioxide_value_alert",
+                        "id": "carbonDioxide_value_alert"
+                    },
+                    {
+                        "aggregator": "mean",
+                        "attribute": "motion_isOccupied_Building_Summary_mean",
+                        "id": "motion_isOccupied_Building_Summary_mean"
+                    }
+                ],
+                "range": {
+                    "count": -1,
+                    "interval": "hour"
+                }
+            },
+            "id": "workstation-overview-image",
+            "size": "LARGE",
+            "title": "Building Health",
+            "type": "IMAGE"
+        }
+    ],
+    "title": "Building Summary",
+    "layouts": {
+        "max": [
+            {
+                "i": "card-carbonDioxide_value_alert-value",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "card-humidity_value-value",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "i": "card-carbonDioxide_value-value",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "i": "card-temperature_value_f-value",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-light_value-value",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "card-pressure_value_hPa-value",
+                "x": 2,
+                "y": 1
+            },
+            {
+                "i": "card-sound_value_db-value",
+                "x": 2,
+                "y": 2
+            },
+            {
+                "i": "card-carbonDioxide_comfortLevel-timeseries",
+                "x": 6,
+                "y": 8
+            },
+            {
+                "i": "card-carbonDioxide_value-timeseries",
+                "x": 6,
+                "y": 14
+            },
+            {
+                "i": "card-humidity_comfortLevel-timeseries",
+                "x": 0,
+                "y": 10
+            },
+            {
+                "i": "card-humidity_value-timeseries",
+                "x": 6,
+                "y": 18
+            },
+            {
+                "i": "card-light_comfortLevel-timeseries",
+                "x": 6,
+                "y": 12
+            },
+            {
+                "i": "card-light_value-timeseries",
+                "x": 0,
+                "y": 22
+            },
+            {
+                "i": "card-motion_isOccupied-timeseries",
+                "x": 6,
+                "y": 4
+            },
+            {
+                "i": "card-pressure_comfortLevel-timeseries",
+                "x": 0,
+                "y": 12
+            },
+            {
+                "i": "card-pressure_value_hPa-timeseries",
+                "x": 6,
+                "y": 22
+            },
+            {
+                "i": "card-sound_comfortLevel-timeseries",
+                "x": 6,
+                "y": 10
+            },
+            {
+                "i": "card-sound_value_db-timeseries",
+                "x": 0,
+                "y": 18
+            },
+            {
+                "i": "card-temperature_value_f-timeseries",
+                "x": 0,
+                "y": 14
+            },
+            {
+                "i": "card-temperature_comfortLevel-timeseries",
+                "x": 0,
+                "y": 8
+            },
+            {
+                "i": "occupancy-floor27-image",
+                "x": 0,
+                "y": 4
+            },
+            {
+                "i": "temperature-floor27-image",
+                "x": 0,
+                "y": 6
+            },
+            {
+                "i": "carbon-dioxide-alert",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "i": "workstation-overview-image",
+                "x": 0,
+                "y": 26
+            }
+        ],
+        "xl": [
+            {
+                "i": "card-carbonDioxide_value_alert-value",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "card-humidity_value-value",
+                "x": 2,
+                "y": 2
+            },
+            {
+                "i": "card-carbonDioxide_value-value",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "i": "card-temperature_value_f-value",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-light_value-value",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "i": "card-pressure_value_hPa-value",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "card-sound_value_db-value",
+                "x": 2,
+                "y": 1
+            },
+            {
+                "i": "card-carbonDioxide_comfortLevel-timeseries",
+                "x": 8,
+                "y": 8
+            },
+            {
+                "i": "card-carbonDioxide_value-timeseries",
+                "x": 8,
+                "y": 16
+            },
+            {
+                "i": "card-humidity_comfortLevel-timeseries",
+                "x": 0,
+                "y": 14
+            },
+            {
+                "i": "card-humidity_value-timeseries",
+                "x": 0,
+                "y": 20
+            },
+            {
+                "i": "card-light_comfortLevel-timeseries",
+                "x": 8,
+                "y": 10
+            },
+            {
+                "i": "card-light_value-timeseries",
+                "x": 8,
+                "y": 20
+            },
+            {
+                "i": "card-motion_isOccupied-timeseries",
+                "x": 0,
+                "y": 8
+            },
+            {
+                "i": "card-pressure_comfortLevel-timeseries",
+                "x": 8,
+                "y": 14
+            },
+            {
+                "i": "card-pressure_value_hPa-timeseries",
+                "x": 8,
+                "y": 24
+            },
+            {
+                "i": "card-sound_comfortLevel-timeseries",
+                "x": 8,
+                "y": 12
+            },
+            {
+                "i": "card-sound_value_db-timeseries",
+                "x": 0,
+                "y": 24
+            },
+            {
+                "i": "card-temperature_value_f-timeseries",
+                "x": 0,
+                "y": 16
+            },
+            {
+                "i": "card-temperature_comfortLevel-timeseries",
+                "x": 0,
+                "y": 12
+            },
+            {
+                "i": "occupancy-floor27-image",
+                "x": 8,
+                "y": 4
+            },
+            {
+                "i": "temperature-floor27-image",
+                "x": 8,
+                "y": 6
+            },
+            {
+                "i": "carbon-dioxide-alert",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "i": "workstation-overview-image",
+                "x": 0,
+                "y": 4
+            }
+        ],
+        "lg": [
+            {
+                "i": "card-carbonDioxide_value_alert-value",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "card-humidity_value-value",
+                "x": 6,
+                "y": 0
+            },
+            {
+                "i": "card-carbonDioxide_value-value",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "i": "card-temperature_value_f-value",
+                "x": 12,
+                "y": 0
+            },
+            {
+                "i": "card-light_value-value",
+                "x": 8,
+                "y": 0
+            },
+            {
+                "i": "card-pressure_value_hPa-value",
+                "x": 10,
+                "y": 0
+            },
+            {
+                "i": "card-sound_value_db-value",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "i": "card-carbonDioxide_comfortLevel-timeseries",
+                "x": 0,
+                "y": 13
+            },
+            {
+                "i": "card-carbonDioxide_value-timeseries",
+                "x": 0,
+                "y": 19
+            },
+            {
+                "i": "card-humidity_comfortLevel-timeseries",
+                "x": 8,
+                "y": 15
+            },
+            {
+                "i": "card-humidity_value-timeseries",
+                "x": 0,
+                "y": 23
+            },
+            {
+                "i": "card-light_comfortLevel-timeseries",
+                "x": 0,
+                "y": 15
+            },
+            {
+                "i": "card-light_value-timeseries",
+                "x": 8,
+                "y": 23
+            },
+            {
+                "i": "card-motion_isOccupied-timeseries",
+                "x": 8,
+                "y": 9
+            },
+            {
+                "i": "card-pressure_comfortLevel-timeseries",
+                "x": 8,
+                "y": 17
+            },
+            {
+                "i": "card-pressure_value_hPa-timeseries",
+                "x": 0,
+                "y": 27
+            },
+            {
+                "i": "card-sound_comfortLevel-timeseries",
+                "x": 0,
+                "y": 17
+            },
+            {
+                "i": "card-sound_value_db-timeseries",
+                "x": 8,
+                "y": 19
+            },
+            {
+                "i": "card-temperature_value_f-timeseries",
+                "x": 0,
+                "y": 9
+            },
+            {
+                "i": "card-temperature_comfortLevel-timeseries",
+                "x": 8,
+                "y": 13
+            },
+            {
+                "i": "occupancy-floor27-image",
+                "x": 8,
+                "y": 5
+            },
+            {
+                "i": "temperature-floor27-image",
+                "x": 8,
+                "y": 7
+            },
+            {
+                "i": "carbon-dioxide-alert",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "workstation-overview-image",
+                "x": 0,
+                "y": 5
+            }
+        ],
+        "md": [
+            {
+                "i": "card-carbonDioxide_value_alert-value",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "card-humidity_value-value",
+                "x": 2,
+                "y": 1
+            },
+            {
+                "i": "card-carbonDioxide_value-value",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "i": "card-temperature_value_f-value",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "i": "card-light_value-value",
+                "x": 4,
+                "y": 1
+            },
+            {
+                "i": "card-pressure_value_hPa-value",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-sound_value_db-value",
+                "x": 6,
+                "y": 0
+            },
+            {
+                "i": "card-carbonDioxide_comfortLevel-timeseries",
+                "x": 0,
+                "y": 20
+            },
+            {
+                "i": "card-carbonDioxide_value-timeseries",
+                "x": 0,
+                "y": 34
+            },
+            {
+                "i": "card-humidity_comfortLevel-timeseries",
+                "x": 0,
+                "y": 22
+            },
+            {
+                "i": "card-humidity_value-timeseries",
+                "x": 0,
+                "y": 38
+            },
+            {
+                "i": "card-light_comfortLevel-timeseries",
+                "x": 0,
+                "y": 24
+            },
+            {
+                "i": "card-light_value-timeseries",
+                "x": 0,
+                "y": 46
+            },
+            {
+                "i": "card-motion_isOccupied-timeseries",
+                "x": 0,
+                "y": 14
+            },
+            {
+                "i": "card-pressure_comfortLevel-timeseries",
+                "x": 0,
+                "y": 26
+            },
+            {
+                "i": "card-pressure_value_hPa-timeseries",
+                "x": 0,
+                "y": 50
+            },
+            {
+                "i": "card-sound_comfortLevel-timeseries",
+                "x": 0,
+                "y": 28
+            },
+            {
+                "i": "card-sound_value_db-timeseries",
+                "x": 0,
+                "y": 42
+            },
+            {
+                "i": "card-temperature_value_f-timeseries",
+                "x": 0,
+                "y": 30
+            },
+            {
+                "i": "card-temperature_comfortLevel-timeseries",
+                "x": 0,
+                "y": 18
+            },
+            {
+                "i": "occupancy-floor27-image",
+                "x": 0,
+                "y": 10
+            },
+            {
+                "i": "temperature-floor27-image",
+                "x": 0,
+                "y": 12
+            },
+            {
+                "i": "carbon-dioxide-alert",
+                "x": 0,
+                "y": 6
+            },
+            {
+                "i": "workstation-overview-image",
+                "x": 0,
+                "y": 2
+            }
+        ],
+        "sm": [
+            {
+                "i": "card-carbonDioxide_value_alert-value",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "card-humidity_value-value",
+                "x": 2,
+                "y": 2
+            },
+            {
+                "i": "card-carbonDioxide_value-value",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "i": "card-temperature_value_f-value",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-light_value-value",
+                "x": 2,
+                "y": 1
+            },
+            {
+                "i": "card-pressure_value_hPa-value",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "i": "card-sound_value_db-value",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "card-carbonDioxide_comfortLevel-timeseries",
+                "x": 0,
+                "y": 4
+            },
+            {
+                "i": "card-carbonDioxide_value-timeseries",
+                "x": 0,
+                "y": 6
+            },
+            {
+                "i": "card-humidity_comfortLevel-timeseries",
+                "x": 0,
+                "y": 10
+            },
+            {
+                "i": "card-humidity_value-timeseries",
+                "x": 0,
+                "y": 12
+            },
+            {
+                "i": "card-light_comfortLevel-timeseries",
+                "x": 0,
+                "y": 16
+            },
+            {
+                "i": "card-light_value-timeseries",
+                "x": 0,
+                "y": 18
+            },
+            {
+                "i": "card-motion_isOccupied-timeseries",
+                "x": 0,
+                "y": 22
+            },
+            {
+                "i": "card-pressure_comfortLevel-timeseries",
+                "x": 0,
+                "y": 26
+            },
+            {
+                "i": "card-pressure_value_hPa-timeseries",
+                "x": 0,
+                "y": 28
+            },
+            {
+                "i": "card-sound_comfortLevel-timeseries",
+                "x": 0,
+                "y": 32
+            },
+            {
+                "i": "card-sound_value_db-timeseries",
+                "x": 0,
+                "y": 34
+            },
+            {
+                "i": "card-temperature_value_f-timeseries",
+                "x": 0,
+                "y": 38
+            },
+            {
+                "i": "card-temperature_comfortLevel-timeseries",
+                "x": 0,
+                "y": 42
+            },
+            {
+                "i": "occupancy-floor27-image",
+                "x": 0,
+                "y": 46
+            },
+            {
+                "i": "temperature-floor27-image",
+                "x": 0,
+                "y": 44
+            },
+            {
+                "i": "carbon-dioxide-alert",
+                "x": 0,
+                "y": 48
+            },
+            {
+                "i": "workstation-overview-image",
+                "x": 0,
+                "y": 52
+            }
+        ],
+        "xs": [
+            {
+                "i": "card-carbonDioxide_value_alert-value",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "card-humidity_value-value",
+                "x": 2,
+                "y": 2
+            },
+            {
+                "i": "card-carbonDioxide_value-value",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "i": "card-temperature_value_f-value",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-light_value-value",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "card-pressure_value_hPa-value",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "i": "card-sound_value_db-value",
+                "x": 2,
+                "y": 1
+            },
+            {
+                "i": "card-carbonDioxide_comfortLevel-timeseries",
+                "x": 0,
+                "y": 16
+            },
+            {
+                "i": "card-carbonDioxide_value-timeseries",
+                "x": 0,
+                "y": 18
+            },
+            {
+                "i": "card-humidity_comfortLevel-timeseries",
+                "x": 0,
+                "y": 22
+            },
+            {
+                "i": "card-humidity_value-timeseries",
+                "x": 0,
+                "y": 24
+            },
+            {
+                "i": "card-light_comfortLevel-timeseries",
+                "x": 0,
+                "y": 28
+            },
+            {
+                "i": "card-light_value-timeseries",
+                "x": 0,
+                "y": 30
+            },
+            {
+                "i": "card-motion_isOccupied-timeseries",
+                "x": 0,
+                "y": 34
+            },
+            {
+                "i": "card-pressure_comfortLevel-timeseries",
+                "x": 0,
+                "y": 38
+            },
+            {
+                "i": "card-pressure_value_hPa-timeseries",
+                "x": 0,
+                "y": 40
+            },
+            {
+                "i": "card-sound_comfortLevel-timeseries",
+                "x": 0,
+                "y": 44
+            },
+            {
+                "i": "card-sound_value_db-timeseries",
+                "x": 0,
+                "y": 46
+            },
+            {
+                "i": "card-temperature_value_f-timeseries",
+                "x": 0,
+                "y": 50
+            },
+            {
+                "i": "card-temperature_comfortLevel-timeseries",
+                "x": 0,
+                "y": 54
+            },
+            {
+                "i": "occupancy-floor27-image",
+                "x": 0,
+                "y": 14
+            },
+            {
+                "i": "temperature-floor27-image",
+                "x": 0,
+                "y": 12
+            },
+            {
+                "i": "carbon-dioxide-alert",
+                "x": 0,
+                "y": 8
+            },
+            {
+                "i": "workstation-overview-image",
+                "x": 0,
+                "y": 4
+            }
+        ]
+    }
+}

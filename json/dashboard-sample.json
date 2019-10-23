@@ -1,0 +1,535 @@
+{
+    "cards": [
+        {
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "discharge_flow_rate",
+                        "label": "Discharge flow",
+                        "precision": 3
+                    },
+                    {
+                        "dataSourceId": "discharge_perc",
+                        "label": "Max Discharge %",
+                        "precision": 3
+                    }
+                ]
+            },
+            "dataSource": {
+                "attributes":[
+                    {
+                        "aggregator": "mean",
+                        "attribute": "discharge_flow_rate",
+                        "id": "discharge_flow_rate"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "discharge_perc",
+                        "id": "discharge_perc"
+                    }
+                ]
+            },
+            "id": "calculated",
+            "size": "SMALL",
+            "title": "Calculated",
+            "type": "VALUE"
+        },
+        {
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "air_flow_rate",
+                        "label": "Latest",
+                        "precision": 3,
+                        "thresholds": [
+                            {
+                                "color": "#F00",
+                                "comparison": ">",
+                                "icon": "icon--warning",
+                                "value": 2
+                            },
+                            {
+                                "color": "#5aa700",
+                                "comparison": "<",
+                                "icon": "icon--checkmark--outline",
+                                "value": 2
+                            }
+                        ]
+                    },
+                    {
+                        "dataSourceId": "air_flow_rate_min",
+                        "label": "Minimum",
+                        "precision": 3,
+                        "thresholds": [
+                            {
+                                "color": "#5aa700",
+                                "comparison": ">",
+                                "icon": "icon--checkmark--outline",
+                                "value": -2
+                            },
+                            {
+                                "color": "#F00",
+                                "comparison": "<",
+                                "icon": "icon--warning",
+                                "value": -2
+                            }
+                        ]
+                    },
+                    {
+                        "dataSourceId": "air_flow_rate_max",
+                        "label": "Maximum",
+                        "precision": 3,
+                        "thresholds": [
+                            {
+                                "color": "#5aa700",
+                                "comparison": "<",
+                                "icon": "icon--checkmark--outline",
+                                "value": 5
+                            },
+                            {
+                                "color": "#F00",
+                                "comparison": ">",
+                                "icon": "icon--warning",
+                                "value": 5
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dataSource": {
+                "attributes":[
+                    {
+                        "aggregator": "last",
+                        "attribute": "air_flow_rate",
+                        "id": "air_flow_rate"
+                    },
+                    {
+                        "aggregator": "min",
+                        "attribute": "air_flow_rate",
+                        "id": "air_flow_rate_min"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "air_flow_rate",
+                        "id": "air_flow_rate_max"
+                    }
+                ]
+            },
+            "id": "air_flow",
+            "size": "SMALL",
+            "title": "Air flow",
+            "type": "VALUE"
+        },
+        {
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "fuel_flow_rate",
+                        "label": "Latest",
+                        "precision": 3,
+                        "thresholds": [
+                            {
+                                "color": "#F00",
+                                "comparison": ">",
+                                "icon": "icon--warning",
+                                "value": 2
+                            }
+                        ]
+                    },
+                    {
+                        "dataSourceId": "fuel_flow_rate_min",
+                        "label": "Minimum",
+                        "precision": 3,
+                        "thresholds": [
+                            {
+                                "color": "#5aa700",
+                                "comparison": ">",
+                                "icon": "icon--checkmark--outline",
+                                "value": -2
+                            }
+                        ]
+                    },
+                    {
+                        "dataSourceId": "fuel_flow_rate_max",
+                        "label": "Maximum",
+                        "precision": 3,
+                        "thresholds": [
+                            {
+                                "color": "#5aa700",
+                                "comparison": "<",
+                                "icon": "icon--checkmark--outline",
+                                "value": 5
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dataSource": {
+                "attributes":[
+                    {
+                        "aggregator": "last",
+                        "attribute": "fuel_flow_rate",
+                        "id": "fuel_flow_rate"
+                    },
+                    {
+                        "aggregator": "min",
+                        "attribute": "fuel_flow_rate",
+                        "id": "fuel_flow_rate_min"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "fuel_flow_rate",
+                        "id": "fuel_flow_rate_max"
+                    }
+                ]
+            },
+            "id": "fuel_flow",
+            "size": "SMALL",
+            "title": "Fuel flow",
+            "type": "VALUE"
+        },
+        {
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "airflow_mean",
+                        "label": "Airflow Mean"
+                    },
+                    {
+                        "dataSourceId": "airflow_max",
+                        "label": "Airflow Max"
+                    }
+                ],
+                "unit": "PSI"
+            },
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "air_flow_rate",
+                        "id": "airflow_mean"
+                    },
+                    {
+                        "aggregator": "max",
+                        "attribute": "air_flow_rate",
+                        "id": "airflow_max"
+                    }
+                ],
+                "range": {
+                    "type": "rolling",
+                    "count": -1,
+                    "interval": "month"
+                },
+                "timeGrain": "day"
+            },
+            "id": "air_flow_mean",
+            "size": "LARGE",
+            "title": "Air flow mean vs max",
+            "type": "TIMESERIES"
+        },
+        {
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "pressure",
+                        "label": "Latest",
+                        "precision": 3,
+                        "thresholds": [
+                            {
+                                "color": "#F00",
+                                "comparison": ">",
+                                "icon": "icon--warning",
+                                "value": 0
+                            }
+                        ],
+                        "unit": "PSI"
+                    }
+                ]
+            },
+            "dataSource": {
+                "attributes":[
+                    {
+                        "aggregator": "last",
+                        "attribute": "pressure",
+                        "id": "pressure"
+                    }
+                ]
+            },
+            "id": "pressure",
+            "size": "XSMALLWIDE",
+            "title": "Pressure",
+            "type": "VALUE"
+        },
+        {
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "temperature",
+                        "precision": 1
+                    }
+                ]
+            },
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "temperature",
+                        "id": "temperature"
+                    }
+                ]
+            },
+            "id": "temperature",
+            "size": "XSMALL",
+            "title": "Temp (F)",
+            "type": "VALUE"
+        },
+        {
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "temp_set_point",
+                        "precision": 1
+                    }
+                ]
+            },
+            "dataSource": {
+                "attributes":[
+                    {
+                        "aggregator": "mean",
+                        "attribute": "temp_set_point",
+                        "id": "temp_set_point"
+                    }
+                ]
+            },
+            "id": "temp_set_point",
+            "size": "XSMALL",
+            "title": "Set Point",
+            "type": "VALUE"
+        }
+    ],
+    "layouts": {
+        "lg": [
+            {
+                "i": "calculated",
+                "x": 8,
+                "y": 2
+            },
+            {
+                "i": "air_flow",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "fuel_flow",
+                "x": 8,
+                "y": 0
+            },
+            {
+                "i": "air_flow_mean",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "pressure",
+                "x": 12,
+                "y": 0
+            },
+            {
+                "i": "temperature",
+                "x": 12,
+                "y": 1
+            },
+            {
+                "i": "temp_set_point",
+                "x": 12,
+                "y": 2
+            }
+        ],
+        "max": [
+            {
+                "i": "calculated",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "air_flow",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "i": "fuel_flow",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "i": "air_flow_mean",
+                "x": 6,
+                "y": 0
+            },
+            {
+                "i": "pressure",
+                "x": 12,
+                "y": 0
+            },
+            {
+                "i": "temperature",
+                "x": 12,
+                "y": 1
+            },
+            {
+                "i": "temp_set_point",
+                "x": 14,
+                "y": 1
+            }
+        ],
+        "md": [
+            {
+                "i": "calculated",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "air_flow",
+                "x": 0,
+                "y": 6
+            },
+            {
+                "i": "fuel_flow",
+                "x": 1,
+                "y": 9
+            },
+            {
+                "i": "air_flow_mean",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "pressure",
+                "x": 0,
+                "y": 8
+            },
+            {
+                "i": "temperature",
+                "x": 4,
+                "y": 6
+            },
+            {
+                "i": "temp_set_point",
+                "x": 6,
+                "y": 6
+            }
+        ],
+        "sm": [
+            {
+                "i": "calculated",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "air_flow",
+                "x": 1,
+                "y": 8
+            },
+            {
+                "i": "fuel_flow",
+                "x": 0,
+                "y": 6
+            },
+            {
+                "i": "air_flow_mean",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "pressure",
+                "x": 0,
+                "y": 10
+            },
+            {
+                "i": "temperature",
+                "x": 2,
+                "y": 10
+            },
+            {
+                "i": "temp_set_point",
+                "x": 0,
+                "y": 11
+            }
+        ],
+        "xl": [
+            {
+                "i": "calculated",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "air_flow",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "i": "fuel_flow",
+                "x": 8,
+                "y": 0
+            },
+            {
+                "i": "air_flow_mean",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "pressure",
+                "x": 8,
+                "y": 2
+            },
+            {
+                "i": "temperature",
+                "x": 12,
+                "y": 2
+            },
+            {
+                "i": "temp_set_point",
+                "x": 14,
+                "y": 2
+            }
+        ],
+        "xs": [
+            {
+                "i": "calculated",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "air_flow",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "fuel_flow",
+                "x": 0,
+                "y": 4
+            },
+            {
+                "i": "air_flow_mean",
+                "x": 0,
+                "y": 6
+            },
+            {
+                "i": "pressure",
+                "x": 0,
+                "y": 10
+            },
+            {
+                "i": "temperature",
+                "x": 0,
+                "y": 11
+            },
+            {
+                "i": "temp_set_point",
+                "x": 2,
+                "y": 11
+            }
+        ]
+    },
+    "title": "Boiler Summary"
+}

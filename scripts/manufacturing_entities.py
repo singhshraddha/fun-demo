@@ -37,7 +37,7 @@ class Mfg_Line (metadata.BaseCustomEntityType):
         columns.append(Column('TURBINE_ID',String(50) ))
         columns.append(Column('TEMPERATURE', Float() ))
         columns.append(Column('PRESSURE', Float() ))
-        columns.append(Column('STEP', Integer() ))
+        columns.append(Column('STEP', Float() ))
 
         # dimension columns
         dimension_columns = []

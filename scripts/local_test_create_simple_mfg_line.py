@@ -21,7 +21,7 @@ with open('credentials_Monitor-Demo.json', encoding='utf-8') as F:
 
 db = Database(credentials = credentials)
 entity_type_name = 'Clients'
-db.drop_table(entity_type_name, schema = db_schema)
+#db.drop_table(entity_type_name, schema = db_schema)
 
 entity = Mfg_Line(name = entity_type_name,
                 db = db,
@@ -33,6 +33,9 @@ entity.register(raise_error=False)
 # You must unregister_functions if you change the mehod signature or required inputs.
 #db.unregister_functions(["DataHTTPPreload"])
 #db.register_functions([DemoHTTPPreload])
+
+#entity.add_slowly_changing_dimension(self,property_name,datatype,**kwargs):
+#entity.make_dimension()
 
 entity.exec_local_pipeline()
 

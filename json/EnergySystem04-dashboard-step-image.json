@@ -1,0 +1,393 @@
+{
+    "timeGrain": "hour",
+    "cards": [
+      {
+          "content": {
+              "alt": "Process Health",
+              "zoomMax": 5,
+              "hotspots": [
+                  {
+                      "color": "#FFF",
+                      "content": {
+                          "attributes": [
+                              {
+                                  "dataSourceId": "STEP_EnergySystem04_last",
+                                  "label": "Pressure"
+                              }
+                          ]
+                      },
+                      "locations": [
+                          {
+                              "xDataSourceId": "PRESS_X",
+                              "yDataSourceId": "PRESS_Y"
+                          }
+                      ],
+                      "thresholds": [
+                          {
+                              "color": "blue",
+                              "comparison": "=",
+                              "dataSourceId": "STEP_EnergySystem04_last",
+                              "icon": "icon--close--solid",
+                              "isHotspot": true,
+                              "value": 0
+                          },
+                          {
+                              "color": "yellow",
+                              "comparison": "=",
+                              "dataSourceId": "STEP_EnergySystem04_last",
+                              "icon": "icon--close--solid",
+                              "isHotspot": true,
+                              "value":  5
+                          },
+                          {
+                              "color": "red",
+                              "comparison": ">=",
+                              "dataSourceId": "STEP_EnergySystem04_last",
+                              "icon": "icon--close--solid",
+                              "isHotspot": true,
+                              "value": 10
+                          }
+                      ]
+                  }
+              ],
+              "image": "EnergySystem"
+          },
+          "dataSource": {
+              "attributes": [
+                  {
+                      "attribute": "STEP_EnergySystem04_last",
+                      "id": "STEP_EnergySystem04_last"
+                  },
+                  {
+                      "attribute": "PRESS_X",
+                      "id": "PRESS_X"
+                  },
+                  {
+                      "attribute": "PRESS_Y",
+                      "id": "PRESS_Y"
+                  }
+              ],
+              "range": {
+                  "count": -1,
+                  "interval": "hour",
+                  "type": "periodToDate"
+              },
+              "groupBy": [
+                  "deviceid"
+              ]
+          },
+          "id": "occupancy-floor27-image",
+          "size": "MEDIUM",
+          "title": "Occupancy",
+          "type": "IMAGE"
+      },
+        {
+            "id": "card-alerts_PRESSURE-value",
+            "size": "XSMALL",
+            "title": "Anomaly Alerts",
+            "type": "VALUE",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "last",
+                        "attribute": "STEP_EnergySystem04_last",
+                        "id": "STEP_EnergySystem04_last"
+                    }
+                ]
+            },
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "STEP_EnergySystem04_last",
+                        "label": "Count",
+                        "precision": 0,
+                        "thresholds": [
+                            {
+                                "color": "red",
+                                "comparison": ">=",
+                                "icon": "icon--close--solid",
+                                "value": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "card-PRESSURE-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "mean",
+                        "attribute": "PRESSURE_EnergySystem04_mean",
+                        "id": "PRESSURE_EnergySystem04_mean"
+                    },
+                    {
+                        "aggregator": "min",
+                        "attribute": "PRESSURE_EnergySystem04_min",
+                        "id": "PRESSURE_EnergySystem04_min"
+                    }
+                ],
+                "range": {
+                    "count": -24,
+                    "interval": "hour"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "PRESSURE_EnergySystem04_mean",
+                        "label": "Mean"
+                    },
+                    {
+                        "dataSourceId": "PRESSURE_EnergySystem04_min",
+                        "label": "Min"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "Pressure"
+            },
+            "size": "MEDIUM",
+            "title": "PRESSURE",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-STEP-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "last",
+                        "attribute": "STEP_EnergySystem04_last",
+                        "id": "STEP_EnergySystem04_last"
+                    }
+                ],
+                "range": {
+                    "count": -24,
+                    "interval": "hour"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "STEP_EnergySystem04_last",
+                        "label": "Last"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "Step"
+            },
+            "size": "MEDIUM",
+            "title": "STEP",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-TEMPERATURE-timeseries",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "max",
+                        "attribute": "TEMPERATURE_EnergySystem04_max",
+                        "id": "TEMPERATURE_EnergySystem04_max"
+                    },
+                    {
+                        "aggregator": "min",
+                        "attribute": "TEMPERATURE_EnergySystem04_min",
+                        "id": "TEMPERATURE_EnergySystem04_min"
+                    }
+                ],
+                "range": {
+                    "count": -24,
+                    "interval": "hour"
+                },
+                "timeGrain": "hour"
+            },
+            "content": {
+                "series": [
+                    {
+                        "dataSourceId": "TEMPERATURE_EnergySystem04_max",
+                        "label": "Max"
+                    },
+                    {
+                        "dataSourceId": "TEMPERATURE_EnergySystem04_min",
+                        "label": "Min"
+                    }
+                ],
+                "xLabel": "Time",
+                "yLabel": "Temperature"
+            },
+            "size": "MEDIUM",
+            "title": "TEMPERATURE",
+            "type": "TIMESERIES"
+        },
+        {
+            "id": "card-TURBINE_ID-value",
+            "dataSource": {
+                "attributes": [
+                    {
+                        "aggregator": "last",
+                        "attribute": "TURBINE_ID_EnergySystem04_last",
+                        "id": "TURBINE_ID_EnergySystem04_last"
+                    }
+                ]
+            },
+            "content": {
+                "attributes": [
+                    {
+                        "dataSourceId": "TURBINE_ID_EnergySystem04_last",
+                        "label": "Last turbine_id"
+                    }
+                ]
+            },
+            "size": "XSMALLWIDE",
+            "title": "TURBINE_ID",
+            "type": "VALUE"
+        }
+    ],
+    "title": "EnergySystem04",
+    "layouts": {
+        "max": [
+            {
+                "i": "card-PRESSURE-timeseries",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-STEP-timeseries",
+                "x": 6,
+                "y": 0
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "card-TURBINE_ID-value",
+                "x": 6,
+                "y": 2
+            }
+        ],
+        "xl": [
+            {
+                "i": "card-PRESSURE-timeseries",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-STEP-timeseries",
+                "x": 8,
+                "y": 0
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 8,
+                "y": 2
+            },
+            {
+                "i": "card-TURBINE_ID-value",
+                "x": 0,
+                "y": 4
+            }
+        ],
+        "lg": [
+            {
+                "i": "card-alerts_PRESSURE-value",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "card-PRESSURE-timeseries",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-STEP-timeseries",
+                "x": 8,
+                "y": 3
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 8,
+                "y": 1
+            },
+            {
+                "i": "card-TURBINE_ID-value",
+                "x": 8,
+                "y": 0
+            }
+        ],
+        "md": [
+            {
+                "i": "card-alerts_PRESSURE-value",
+                "x": 0,
+                "y": 0
+            },
+            {
+                "i": "card-PRESSURE-timeseries",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-STEP-timeseries",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "i": "card-TURBINE_ID-value",
+                "x": 0,
+                "y": 7
+            }
+        ],
+        "sm": [
+            {
+                "i": "card-PRESSURE-timeseries",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-STEP-timeseries",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 0,
+                "y": 4
+            },
+            {
+                "i": "card-TURBINE_ID-value",
+                "x": 0,
+                "y": 6
+            }
+        ],
+        "xs": [
+            {
+                "i": "card-PRESSURE-timeseries",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-STEP-timeseries",
+                "x": 0,
+                "y": 2
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 0,
+                "y": 4
+            },
+            {
+                "i": "card-TURBINE_ID-value",
+                "x": 0,
+                "y": 6
+            }
+        ]
+    }
+}

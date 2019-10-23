@@ -137,6 +137,9 @@ class DemoHTTPPreload(BasePreload):
                 if metric == 'TURBINE_ID':
                     logging.debug( "Found TURBINE_ID %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'STEP':
+                    logging.debug( "Found STEP %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
                 if metric == 'TEMP_X':
                     logging.debug( "Found TEMP_X %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
@@ -249,7 +252,7 @@ class DemoHTTPPreload(BasePreload):
         '''
         response_data[ 'CLIENT' ] =  ['Mariners Way MFG', 'Mariners Way MFG']
         response_data[ 'ORGANIZATION' ] =  ['Production', 'Production']
-        response_data[ 'FUNCTION' ] =  ['Line 1', 'Line 2']  
+        response_data[ 'FUNCTION' ] =  ['Line 1', 'Line 2']
 
         '''
         # Create Numpy array using remaining entity metrics

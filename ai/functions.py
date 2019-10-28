@@ -147,10 +147,10 @@ class DemoHTTPPreload(BasePreload):
                     logging.debug( "Found TEMP_Y %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
                 if metric == 'PRESS_X':
-                    logging.debug( "Found TEMP_X %s " %metrics_json[metric] )
+                    logging.debug( "Found PRESS_X %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
                 if metric == 'PRESS_Y':
-                    logging.debug( "Found TEMP_Y %s " %metrics_json[metric] )
+                    logging.debug( "Found PRESS_Y %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
                 if metric == 'A_TEMP_X':
                     logging.debug( "Found A_TEMP_X %s " %metrics_json[metric] )
@@ -158,11 +158,11 @@ class DemoHTTPPreload(BasePreload):
                 if metric == 'A_TEMP_Y':
                     logging.debug( "Found A_TEMP_Y %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
-                if metric == 'B_PRESS_X':
-                    logging.debug( "Found B_TEMP_X %s " %metrics_json[metric] )
+                if metric == 'A_PRESS_X':
+                    logging.debug( "Found A_PRESS_X %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
-                if metric == 'B_PRESS_Y':
-                    logging.debug( "Found B_TEMP_Y %s " %metrics_json[metric] )
+                if metric == 'A_PRESS_Y':
+                    logging.debug( "Found A_PRESS_Y %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
                 if metric == 'B_TEMP_X':
                     logging.debug( "Found B_TEMP_X %s " %metrics_json[metric] )
@@ -171,10 +171,10 @@ class DemoHTTPPreload(BasePreload):
                     logging.debug( "Found B_TEMP_Y %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
                 if metric == 'B_PRESS_X':
-                    logging.debug( "Found B_TEMP_X %s " %metrics_json[metric] )
+                    logging.debug( "Found B_PRESS_X %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
                 if metric == 'B_PRESS_Y':
-                    logging.debug( "Found B_TEMP_Y %s " %metrics_json[metric] )
+                    logging.debug( "Found B_PRESS_Y %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
                 if metric == 'CLIENT':
                     logging.debug( "Found CLIENT %s " %metrics_json[metric] )

@@ -39,10 +39,14 @@ class Mfg_Line (metadata.BaseCustomEntityType):
         columns.append(Column('TEMPERATURE', Float() ))
         columns.append(Column('PRESSURE', Float() ))
         columns.append(Column('STEP', Float() ))
-        columns.append(Column('TEMP_X', Float() ))
-        columns.append(Column('TEMP_Y', Float() ))
-        columns.append(Column('PRESS_X', Float() ))
-        columns.append(Column('PRESS_Y', Float() ))
+        columns.append(Column('A_TEMP_X', Float() ))
+        columns.append(Column('A_TEMP_Y', Float() ))
+        columns.append(Column('A_PRESS_X', Float() ))
+        columns.append(Column('A_PRESS_Y', Float() ))
+        columns.append(Column('B_TEMP_X', Float() ))
+        columns.append(Column('B_TEMP_Y', Float() ))
+        columns.append(Column('B_PRESS_X', Float() ))
+        columns.append(Column('B_PRESS_Y', Float() ))
 
         # dimension columns
         dimension_columns = []
@@ -55,7 +59,7 @@ class Mfg_Line (metadata.BaseCustomEntityType):
         # simulation settings
         sim = {
             'freq': '5min',
-            'auto_entity_count' : 1,
+            'auto_entity_count' : 2,
             'data_item_mean': {'TEMPERATURE': 22,
                                'STEP': 1,
                                'PRESSURE': 50,

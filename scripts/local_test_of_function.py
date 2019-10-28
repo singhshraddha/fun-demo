@@ -43,7 +43,7 @@ To do anything with IoT Platform Analytics, you will need one or more entity typ
 You can create entity types through the IoT Platform or using the python API as shown below.
 The database schema is only needed if you are not using the default schema. You can also rename the timestamp.
 '''
-entity_name = 'EnergySystem04'
+entity_name = 'Clients02'
 BI_USERNAME = settings.BI_USERNAME
 BI_PASSWORD = settings.BI_PASSWORD
 BI_TENANT_ID = settings.BI_TENANT_ID

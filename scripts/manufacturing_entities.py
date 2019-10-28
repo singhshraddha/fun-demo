@@ -57,7 +57,7 @@ class Mfg_Line (metadata.BaseCustomEntityType):
                                'TURBINE_ID': 1
                                },
             'data_item_domain': {
-                'CLIENT' : ['Riverside MFG','Collonade MFG','Mariners Way MFG' ],
+                'SITE' : ['Riverside MFG','Collonade MFG','Mariners Way MFG' ],
                 'ORGANIZATION': ['Engineering','Supply Chain', 'Production', 'Quality', 'Other'],
                 'FUNCTION': ['New Products','Packaging','Planning','Warehouse', 'Logistics', 'Customer Service','Line 1', 'Line 2', 'Quality Control', 'Calibration', 'Reliability']
             },

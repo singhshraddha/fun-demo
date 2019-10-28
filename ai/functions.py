@@ -152,6 +152,30 @@ class DemoHTTPPreload(BasePreload):
                 if metric == 'PRESS_Y':
                     logging.debug( "Found TEMP_Y %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'A_TEMP_X':
+                    logging.debug( "Found A_TEMP_X %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'A_TEMP_Y':
+                    logging.debug( "Found A_TEMP_Y %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'B_PRESS_X':
+                    logging.debug( "Found B_TEMP_X %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'B_PRESS_Y':
+                    logging.debug( "Found B_TEMP_Y %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'B_TEMP_X':
+                    logging.debug( "Found B_TEMP_X %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'B_TEMP_Y':
+                    logging.debug( "Found B_TEMP_Y %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'B_PRESS_X':
+                    logging.debug( "Found B_TEMP_X %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'B_PRESS_Y':
+                    logging.debug( "Found B_TEMP_Y %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
                 if metric == 'CLIENT':
                     logging.debug( "Found CLIENT %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]

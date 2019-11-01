@@ -20,13 +20,13 @@ with open('credentials_Monitor-Demo.json', encoding='utf-8') as F:
 #    credentials = json.loads(F.read())
 
 db = Database(credentials = credentials)
-entity_type_name = 'Clients'
+entity_type_name = 'Clients04'
 #db.drop_table(entity_type_name, schema = db_schema)
 
 entity = Mfg_Line(name = entity_type_name,
                 db = db,
                 db_schema = db_schema,
-                description = "Manufacturing Operations Control Center",
+                description = "Manufacturing Operations Control Center 03",
                 )
 
 entity.register(raise_error=False)
@@ -35,7 +35,7 @@ entity.register(raise_error=False)
 #db.register_functions([DemoHTTPPreload])
 
 #entity.add_slowly_changing_dimension(self,property_name,datatype,**kwargs):
-#entity.make_dimension()
+entity.make_dimension()
 
 entity.exec_local_pipeline()
 

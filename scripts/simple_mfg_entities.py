@@ -38,6 +38,8 @@ class Mfg_Line (metadata.BaseCustomEntityType):
         columns.append(Column('TURBINE_ID',String(50) ))
         columns.append(Column('TEMPERATURE', Float() ))
         columns.append(Column('PRESSURE', Float() ))
+        columns.append(Column('PREDICT_TEMPERATURE', Float() ))
+        columns.append(Column('PREDICT_PRESSURE', Float() ))
         columns.append(Column('STEP', Float() ))
         columns.append(Column('A_TEMP_X', Float() ))
         columns.append(Column('A_TEMP_Y', Float() ))
@@ -47,7 +49,11 @@ class Mfg_Line (metadata.BaseCustomEntityType):
         columns.append(Column('B_TEMP_Y', Float() ))
         columns.append(Column('B_PRESS_X', Float() ))
         columns.append(Column('B_PRESS_Y', Float() ))
-
+        columns.append(Column('TEMP_X', Float() ))
+        columns.append(Column('TEMP_Y', Float() ))
+        columns.append(Column('PRESS_X', Float() ))
+        columns.append(Column('PREDICT_PRESS_X', Float() ))
+        columns.append(Column('PRESS_Y', Float() ))
         # dimension columns
         dimension_columns = []
         dimension_columns.append(Column('CLIENT', String(50)))
@@ -57,9 +63,11 @@ class Mfg_Line (metadata.BaseCustomEntityType):
         # functions
         functions = []
         # simulation settings
+        # uncomment this if you want to create entities automatically
+        '''
         sim = {
             'freq': '5min',
-            'auto_entity_count' : 2,
+            'auto_entity_count' : 1,
             'data_item_mean': {'TEMPERATURE': 22,
                                'STEP': 1,
                                'PRESSURE': 50,
@@ -70,11 +78,12 @@ class Mfg_Line (metadata.BaseCustomEntityType):
                 'ORG': ['Engineering','Supply Chain', 'Production', 'Quality', 'Other'],
                 'FUNCTION': ['New Products','Packaging','Planning','Warehouse', 'Logistics', 'Customer Service','Line 1', 'Line 2', 'Quality Control', 'Calibration', 'Reliability']
             },
-            'drop_existing': True
+            'drop_existing': False
         }
+
         generator = bif.EntityDataGenerator(ids=None, parameters=sim)
         functions.append(generator)
-
+        '''
         # data type for operator cannot be inferred automatically
         # state it explicitly
 

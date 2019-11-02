@@ -149,6 +149,9 @@ class DemoHTTPPreload(BasePreload):
                 if metric == 'PRESS_X':
                     logging.debug( "Found PRESS_X %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
+                if metric == 'PREDICT_PRESS_X':
+                    logging.debug( "Found PREDICT_PRESS_X %s " %metrics_json[metric] )
+                    net_metrics_data[metric] = metrics_json[metric]
                 if metric == 'PRESS_Y':
                     logging.debug( "Found PRESS_Y %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]

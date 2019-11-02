@@ -136,7 +136,6 @@ class DemoHTTPPreload(BasePreload):
                 if metric == 'PRESSURE':
                     logging.debug( "Found PRESSURE %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]
-                    net_metrics_data[metric] = metrics_json[metric]
                 if metric == 'PREDICT_PRESSURE':
                     logging.debug( "Found PREDICT_PRESSURE %s " %metrics_json[metric] )
                     net_metrics_data[metric] = metrics_json[metric]

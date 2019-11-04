@@ -213,7 +213,10 @@ class DemoHTTPPreload(BasePreload):
             '''
         else:
             # This means something went wrong.
-            logging.debug("Error calling REST API")
+            logging.debug("Error calling REST API. Using Hard coded values")
+            net_metrics_data =
+                {'A_TEMP_Y': [10, 20], 'PRESSURE': [172.64187332977474, -191.7466699309894], 'TURBINE_ID': ['A101', 'B102'], 'PRESS_Y': [30, 60], 'TEMP_X': [10, 40], 'A_TEMP_X': [10, 40], 'TEMPERATURE': [69.0567493319099, -78.44181951722294], 'PRESS_X': [80, 80], 'PREDICT_PRESS_X': [80, 80], 'PREDICT_PRESSURE': [172.64187332977474, -191.7466699309894], 'STEP': [21.0, 21.0], 'B_PRESS_Y': [30, 60], 'A_PRESS_Y': [30, 50], 'A_PRESS_X': [30, 60], 'TEMP_Y': [10, 20], 'B_TEMP_X': [10, 40], 'B_PRESS_X': [30, 50], 'B_TEMP_Y': [10, 20], 'PREDICT_TEMPERATURE': [69.0567493319099, -78.44181951722294]}         
+            rows = len(net_metrics_data)
             #metrics_TURBINE_ID.append("NA")
             #metrics_TEMPERATURE.append(0.0)
             #metrics_PRESSURE.append(0.0)

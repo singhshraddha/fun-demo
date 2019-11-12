@@ -523,207 +523,282 @@
     "layouts": {
         "max": [
             {
-                "i": "card-PRESS_X-timeseries",
+                "i": "card-SpectralAnomalyTempAlert-value",
                 "x": 0,
                 "y": 0
             },
             {
-                "i": "card-PRESS_Y-timeseries",
-                "x": 6,
+                "i": "card-SpectralAnomalyPressAlert-value",
+                "x": 3,
                 "y": 0
-            },
-            {
-                "i": "card-TEMP_X-timeseries",
-                "x": 0,
-                "y": 2
-            },
-            {
-                "i": "card-TEMP_Y-timeseries",
-                "x": 6,
-                "y": 2
-            },
-            {
-                "i": "card-TEMPERATURE-timeseries",
-                "x": 0,
-                "y": 4
             },
             {
                 "i": "card-TURBINE_ID-value",
                 "x": 6,
-                "y": 4
+                "y": 0
+            },
+            {
+                "i": "EnergySystem",
+                "x": 0,
+                "y": 2
             },
             {
                 "i": "card-PRESSURE-timeseries",
-                "x": 9,
-                "y": 4
+                "x": 0,
+                "y": 3
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 6,
+                "y": 3
             },
             {
                 "i": "card-STEP-timeseries",
                 "x": 0,
+                "y": 4
+            },
+            {
+                "i": "card-TEMP_X-timeseries",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "i": "card-TEMP_Y-timeseries",
+                "x": 2,
+                "y": 5
+            },
+            {
+                "i": "card-PRESS_Y-timeseries",
+                "x": 0,
                 "y": 6
             },
             {
-                "i": "card-CLIENT-value",
-                "x": 7,
-                "y": 4
+                "i": "card-PRESS_X-timeseries",
+                "x": 2,
+                "y": 6
+            },
+            {
+                "i": "SpectralAnomalyTempAlertCardTable",
+                "x": 0,
+                "y": 7
             }
         ],
         "xl": [
             {
-                "i": "card-PRESS_X-timeseries",
+                "i": "card-SpectralAnomalyTempAlert-value",
                 "x": 0,
                 "y": 0
             },
             {
-                "i": "card-PRESS_Y-timeseries",
-                "x": 8,
+                "i": "card-SpectralAnomalyPressAlert-value",
+                "x": 4,
                 "y": 0
-            },
-            {
-                "i": "card-TEMP_X-timeseries",
-                "x": 0,
-                "y": 2
-            },
-            {
-                "i": "card-TEMP_Y-timeseries",
-                "x": 8,
-                "y": 2
-            },
-            {
-                "i": "card-TEMPERATURE-timeseries",
-                "x": 0,
-                "y": 4
             },
             {
                 "i": "card-TURBINE_ID-value",
                 "x": 8,
-                "y": 4
+                "y": 0
+            },
+            {
+                "i": "EnergySystem",
+                "x": 0,
+                "y": 2
             },
             {
                 "i": "card-PRESSURE-timeseries",
-                "x": 8,
-                "y": 5
+                "x": 0,
+                "y": 3
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 4,
+                "y": 3
             },
             {
                 "i": "card-STEP-timeseries",
                 "x": 0,
-                "y": 6
+                "y": 3
             },
             {
-                "i": "card-CLIENT-value",
-                "x": 7,
-                "y": 4
+                "i": "card-TEMP_X-timeseries",
+                "x": 8,
+                "y": 3
+            },
+            {
+                "i": "card-TEMP_Y-timeseries",
+                "x": 0,
+                "y": 5
+            },
+            {
+                "i": "card-PRESS_Y-timeseries",
+                "x": 8,
+                "y": 5
+            },
+            {
+                "i": "card-PRESS_X-timeseries",
+                "x": 0,
+                "y": 7
+            },
+            {
+                "i": "SpectralAnomalyTempAlertCardTable",
+                "x": 0,
+                "y": 8
             }
         ],
         "lg": [
             {
-                "i": "card-CLIENT-value",
-                "x": 12,
+                "i": "SpectralAnomalyTempAlertCardTable",
+                "x": 0,
+                "y": 3
+            },
+            {
+                "i": "EnergySystem",
+                "x": 0,
+                "y": 1
+            },
+            {
+                "i": "card-SpectralAnomalyTempAlert-value",
+                "x": 0,
                 "y": 0
+            },
+            {
+                "i": "card-SpectralAnomalyPressAlert-value",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "i": "card-PRESSURE-timeseries",
+                "x": 8,
+                "y": 7
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 0,
+                "y": 7
+            },
+            {
+                "i": "card-TURBINE_ID-value",
+                "x": 8,
+                "y": 0
+            },
+            {
+                "i": "card-STEP-timeseries",
+                "x": 8,
+                "y": 1
+            },
+            {
+                "i": "card-TEMP_X-timeseries",
+                "x": 0,
+                "y": 9
+            },
+            {
+                "i": "card-TEMP_Y-timeseries",
+                "x": 0,
+                "y": 11
+            },
+            {
+                "i": "card-PRESS_Y-timeseries",
+                "x": 8,
+                "y": 11
             },
             {
                 "i": "card-PRESS_X-timeseries",
                 "x": 8,
                 "y": 9
-            },
-            {
-                "i": "card-PRESS_Y-timeseries",
-                "x": 8,
-                "y": 7
-            },
-            {
-                "i": "card-TEMP_X-timeseries",
-                "x": 8,
-                "y": 11
-            },
-            {
-                "i": "card-TEMP_Y-timeseries",
-                "x": 8,
-                "y": 13
-            },
-            {
-                "i": "card-TEMPERATURE-timeseries",
-                "x": 8,
-                "y": 1
-            },
-            {
-                "i": "card-TURBINE_ID-value",
-                "x": 8,
-                "y": 0
-            },
-            {
-                "i": "card-PRESSURE-timeseries",
-                "x": 8,
-                "y": 3
-            },
-            {
-                "i": "card-STEP-timeseries",
-                "x": 8,
-                "y": 5
             }
         ],
         "md": [
             {
-                "i": "card-PRESS_X-timeseries",
+                "i": "card-SpectralAnomalyTempAlert-value",
                 "x": 0,
                 "y": 0
             },
             {
-                "i": "card-PRESS_Y-timeseries",
-                "x": 0,
-                "y": 2
-            },
-            {
-                "i": "card-TEMP_X-timeseries",
-                "x": 0,
-                "y": 4
-            },
-            {
-                "i": "card-TEMP_Y-timeseries",
-                "x": 0,
-                "y": 6
-            },
-            {
-                "i": "card-TEMPERATURE-timeseries",
-                "x": 0,
-                "y": 8
+                "i": "card-SpectralAnomalyPressAlert-value",
+                "x": 2,
+                "y": 0
             },
             {
                 "i": "card-TURBINE_ID-value",
-                "x": 0,
-                "y": 10
+                "x": 4,
+                "y": 0
             },
             {
                 "i": "card-PRESSURE-timeseries",
                 "x": 0,
-                "y": 11
+                "y": 1
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 4,
+                "y": 1
             },
             {
                 "i": "card-STEP-timeseries",
                 "x": 0,
-                "y": 13
+                "y": 6
             },
             {
-                "i": "card-CLIENT-value",
-                "x": 7,
-                "y": 4
+                "i": "card-TEMP_X-timeseries",
+                "x": 0,
+                "y": 8
+            },
+            {
+                "i": "card-TEMP_Y-timeseries",
+                "x": 0,
+                "y": 10
+            },
+            {
+                "i": "card-PRESS_Y-timeseries",
+                "x": 0,
+                "y": 12
+            },
+            {
+                "i": "card-PRESS_X-timeseries",
+                "x": 0,
+                "y": 14
+            },
+            {
+                "i": "SpectralAnomalyTempAlertCardTable",
+                "x": 0,
+                "y": 15
             }
         ],
         "sm": [
             {
-                "i": "card-PRESS_X-timeseries",
+                "i": "card-SpectralAnomalyTempAlert-value",
                 "x": 0,
                 "y": 0
             },
             {
-                "i": "card-PRESS_Y-timeseries",
+                "i": "card-SpectralAnomalyPressAlert-value",
+                "x": 2,
+                "y": 0
+            },
+            {
+                "i": "card-TURBINE_ID-value",
+                "x": 4,
+                "y": 0
+            },
+            {
+                "i": "card-PRESSURE-timeseries",
                 "x": 0,
-                "y": 2
+                "y": 1
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 4,
+                "y": 3
+            },
+            {
+                "i": "card-STEP-timeseries",
+                "x": 0,
+                "y": 4
             },
             {
                 "i": "card-TEMP_X-timeseries",
                 "x": 0,
-                "y": 4
+                "y": 5
             },
             {
                 "i": "card-TEMP_Y-timeseries",
@@ -731,76 +806,76 @@
                 "y": 6
             },
             {
-                "i": "card-TEMPERATURE-timeseries",
+                "i": "card-PRESS_Y-timeseries",
+                "x": 0,
+                "y": 7
+            },
+            {
+                "i": "card-PRESS_X-timeseries",
                 "x": 0,
                 "y": 8
             },
             {
-                "i": "card-TURBINE_ID-value",
+                "i": "SpectralAnomalyTempAlertCardTable",
                 "x": 0,
-                "y": 10
-            },
-            {
-                "i": "card-PRESSURE-timeseries",
-                "x": 0,
-                "y": 11
-            },
-            {
-                "i": "card-STEP-timeseries",
-                "x": 0,
-                "y": 13
-            },
-            {
-                "i": "card-CLIENT-value",
-                "x": 7,
-                "y": 4
+                "y": 9
             }
         ],
         "xs": [
             {
-                "i": "card-PRESS_X-timeseries",
+                "i": "card-SpectralAnomalyTempAlert-value",
                 "x": 0,
-                "y": 0
+                "y": 1
             },
             {
-                "i": "card-PRESS_Y-timeseries",
+                "i": "card-SpectralAnomalyPressAlert-value",
                 "x": 0,
                 "y": 2
             },
             {
-                "i": "card-TEMP_X-timeseries",
-                "x": 0,
-                "y": 4
-            },
-            {
-                "i": "card-TEMP_Y-timeseries",
-                "x": 0,
-                "y": 6
-            },
-            {
-                "i": "card-TEMPERATURE-timeseries",
-                "x": 0,
-                "y": 8
-            },
-            {
                 "i": "card-TURBINE_ID-value",
                 "x": 0,
-                "y": 10
+                "y": 3
             },
             {
                 "i": "card-PRESSURE-timeseries",
                 "x": 0,
-                "y": 11
+                "y": 4
+            },
+            {
+                "i": "card-TEMPERATURE-timeseries",
+                "x": 0,
+                "y": 5
             },
             {
                 "i": "card-STEP-timeseries",
                 "x": 0,
-                "y": 13
+                "y": 6
             },
             {
-                "i": "card-CLIENT-value",
-                "x": 7,
-                "y": 4
+                "i": "card-TEMP_X-timeseries",
+                "x": 0,
+                "y": 7
+            },
+            {
+                "i": "card-TEMP_Y-timeseries",
+                "x": 0,
+                "y": 8
+            },
+            {
+                "i": "card-PRESS_Y-timeseries",
+                "x": 0,
+                "y": 9
+            },
+            {
+                "i": "card-PRESS_X-timeseries",
+                "x": 0,
+                "y": 10
+            },
+            {
+                "i": "SpectralAnomalyTempAlertCardTable",
+                "x": 0,
+                "y": 11
             }
         ]
     }

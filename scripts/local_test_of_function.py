@@ -2,27 +2,23 @@ import json
 import logging
 from sqlalchemy import Column, Integer, String, Float, DateTime, Boolean, func
 from iotfunctions import bif
-from ai.functions import DemoHTTPPreload
+from ai.functions import Issue455HTTPPreload
 from iotfunctions.metadata import EntityType
 from iotfunctions.db import Database
 from iotfunctions.enginelog import EngineLogging
-from ai import settings
 
 EngineLogging.configure_console_logging(logging.DEBUG)
 
 '''
-# Replace with a credentials dictionary or provide a credentials
+# Getting Db credentials
 # Explore > Usage > Watson IOT Platform Analytics > Copy to clipboard
-# Past contents in a json file.
+# Paste contents in credentials_as.json file
+# Save in scripts
 '''
 
-#with open('credentials.json', encoding='utf-8') as F:
 db_schema = 'bluadmin' #  set if you are not using the default
-with open('credentials_Monitor-Demo.json', encoding='utf-8') as F:
+with open('./scripts/credentials_as.json', encoding='utf-8') as F:
     credentials = json.loads(F.read())
-#db_schema = 'dash100462'  # replace if you are not using the default schema
-#with open('credentials_dev2.json', encoding='utf-8') as F:
-#    credentials = json.loads(F.read())
 
 '''
 Developing Test Pipelines
@@ -33,27 +29,24 @@ work together by creating a test pipeline.
 
 
 '''
-Create a database object to access Watson IOT Platform Analytics DB.
+1. Create a database object to access Watson IOT Platform Analytics DB.
 '''
 db = Database(credentials = credentials)
 
-
 '''
-To do anything with IoT Platform Analytics, you will need one or more entity type.
+2. To do anything with IoT Platform Analytics, you will need one or more entity type.
 You can create entity types through the IoT Platform or using the python API as shown below.
+When creating a new entity type you can create it's corresponding dimension table as shown below.
 The database schema is only needed if you are not using the default schema. You can also rename the timestamp.
 '''
-entity_name = 'Clients02'
-BI_USERNAME = settings.BI_USERNAME
-BI_PASSWORD = settings.BI_PASSWORD
-BI_TENANT_ID = settings.BI_TENANT_ID
+entity_name = 'issue455_0'
+entity_dimension_lower =  entity_name.lower() + '_dimension'
+entity_dimension_upper =  entity_name.upper() + '_dimension'
 
-print("BI_Credentials")
-print(BI_USERNAME)
-print(BI_PASSWORD)
-print(BI_TENANT_ID)
 
 db.drop_table(entity_name, schema = db_schema)
+db.drop_table(entity_dimension_lower, schema = db_schema)
+db.drop_table(entity_dimension_upper, schema = db_schema)
 
 entity = EntityType(entity_name,db,
                     Column('TURBINE_ID',String(50)),
@@ -64,17 +57,25 @@ entity = EntityType(entity_name,db,
                     Column('PRESS_Y',Float()),
                     Column('TEMP_X',Float()),
                     Column('TEMP_Y',Float()),
-                    DemoHTTPPreload( username = BI_USERNAME,
-                                    password = BI_PASSWORD,
-                                    request='GET',
-                                    url="https://turbine-simulator.mybluemix.net/v1/api/reading",
-                                    output_item = 'http_preload_done'),
-                    bif.PythonExpression(expression='df["TEMPERATURE"]*df["PRESSURE"]',
-                                         output_name = 'VOLUME'),
+                    Issue455HTTPPreload(username = None,
+                                        password = None,
+                                        request='GET',
+                                        url="https://turbine-simulator.mybluemix.net/v1/api/reading",
+                                        output_item = 'http_preload_done'),
                     **{
                       '_timestamp' : 'evt_timestamp',
                       '_db_schema' : db_schema
-})
+                    }
+                    )
+entity.make_dimension(entity_dimension_upper,
+                      Column('CLIENT',String(50)),
+                      Column('ORGANIZATION',String(50)),
+                      Column('FUNCTION',String(50)),
+                      **{ 'schema': db_schema}
+                      )
+
+
+entity_dimension = entity.get_attributes_dict()['_dimension_table_name']
 
 
 '''
@@ -86,9 +87,9 @@ To also register the functions and constants associated with the entity type, sp
 'publish_kpis' = True.
 '''
 entity.register(raise_error=False)
-# You must unregister_functions if you change the mehod signature or required inputs.
-#db.unregister_functions(["DataHTTPPreload"])
-#db.register_functions([DemoHTTPPreload])
+# You must unregister_functions if you change the method signature or required inputs.
+#db.unregister_functions(['Issue455HTTPPreload'])
+#db.register_functions([Issue455HTTPPreload])
 
 '''
 To test the execution of kpi calculations defined for the entity type locally
@@ -98,13 +99,23 @@ A local test will not update the server job log or write kpi data to the AS data
 lake. Instead kpi data is written to the local filesystem in csv form.
 '''
 
-entity.exec_local_pipeline()
+entity.exec_local_pipeline(**{'_production_mode': False})
 
 '''
 view entity data
 '''
-print ( "Read Table of new  entity" )
+print ( "Read Table of new entity" )
 df = db.read_table(table_name=entity_name, schema=db_schema)
 print(df.head())
+print(df.columns)
 
-print ( "Done registering  entity" )
+
+print ( "Read Table of new dimension" )
+df = db.read_table(table_name=entity_dimension, schema=db_schema)
+print(df.head())
+print(df.columns)
+
+print("Done registering  entity")
+
+
+

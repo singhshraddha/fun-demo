@@ -1,36 +1,23 @@
-import inspect
 import logging
 import datetime as dt
-import math
-from sqlalchemy.sql.sqltypes import TIMESTAMP,VARCHAR
 import numpy as np
 import pandas as pd
 import json
 
 
-#from iotfunctions.base import BaseTransformer
 from iotfunctions.base import BasePreload
 from iotfunctions import ui
-from iotfunctions.db import Database
-from iotfunctions import bif
-#import datetime as dt
-import datetime
-import urllib3
-import xml.etree.ElementTree as ET
 from ai import settings
-import requests
-
 
 logger = logging.getLogger(__name__)
 
 
 # Specify the URL to your package here.
 # This URL must be accessible via pip install
-#PACKAGE_URL = 'git+https://github.com/madendorff/functions@'
-PACKAGE_URL = 'git+https://github.com/fe01134/fun-demo@'
+PACKAGE_URL = 'git+https://github.com/singhshraddha/fun-demo@'
 
 
-class DemoHTTPPreload(BasePreload):
+class Issue455HTTPPreload(BasePreload):
     '''
     Do a HTTP request as a preload activity. Load results of the get into the Entity Type time series table.
     HTTP request is experimental
@@ -38,7 +25,8 @@ class DemoHTTPPreload(BasePreload):
 
     out_table_name = None
 
-    def __init__(self,  username, password, request, url, headers = None, body = None, column_map = None, output_item  = 'http_preload_done'):
+    def __init__(self, username, password, request, url, headers = None, body = None, column_map = None, output_item  =
+    'http_preload_done'):
 
         if body is None:
             body = {}
@@ -53,9 +41,9 @@ class DemoHTTPPreload(BasePreload):
 
         # create an instance variable with the same name as each arg
         self.username = username
-        logging.debug('self.username %s' %self.username)
+        logging.debug('self.username %s' % self.username)
         self.password = password
-        logging.debug('self.password %s' %self.password)
+        logging.debug('self.password %s' % self.password)
         if url == None:
             self.tenant = settings.BI_TENANT_ID
         else:
@@ -99,17 +87,10 @@ class DemoHTTPPreload(BasePreload):
 
         # Initialize
         net_metrics_data = {}
-        #metrics_TURBINE_ID = []
-        #metrics_TEMPERATURE  = []
-        #metrics_PRESSURE  = []
 
-        #response_back = { "deviceid" : ["A101","B102"],
-        #                "TURBINE_ID" : ["A101","B102"],
-        #                "TEMPERATURE" : [37,39],
-        #                "PRESSURE" : [92,89]}
         logging.debug("Getting list of Assets from Turbine Simulation REST API")
         uri = self.tenant
-        header = { 'Accept' : 'application/json' }
+        header = { 'Accept': 'application/json' }
         '''
         response = requests.get(
                          url = uri,
@@ -198,19 +179,6 @@ class DemoHTTPPreload(BasePreload):
             logging.debug( "net_metrics_data %s " %net_metrics_data )
             rows = len(net_metrics_data)
 
-            '''
-            turbines = self.getTurbines(metrics_json['TURBINE_ID'])
-            logging.debug( "turbines %s " %turbines )
-            rows = len(turbines)
-            logging.debug( "length of turbines %s " %rows )
-
-            #logging.debug( "metrics_json TEMPERATURE %s " %metrics_json['TEMPERATURE'] )
-            temperatures = self.getTemperatures(metrics_json['TEMPERATURE'] )
-            logging.debug( "temperatures %s " %temperatures )
-
-            pressures = self.getPressures( metrics_json['PRESSURE'])
-            logging.debug( "pressures %s " %pressures      )
-            '''
         else:
             # This means something went wrong.
             logging.debug("Error calling REST API. Using Hard coded values")
@@ -229,8 +197,6 @@ class DemoHTTPPreload(BasePreload):
 
         entity_type = self.get_entity_type()
         self.db = entity_type.db
-        #self.encoded_body = json.dumps(self.body).encode('utf-8')
-        #self.encoded_headers = json.dumps(self.headers).encode('utf-8')
 
         # This class is setup to write to the entity time series table
         # To route data to a different table in a custom function,
@@ -243,9 +209,14 @@ class DemoHTTPPreload(BasePreload):
             table = self.out_table_name
         schema = entity_type._db_schema
 
+        # get dimension table name - to add dimension values to
+        dim_table = entity_type.get_attributes_dict()['_dimension_table_name']
+
+        logger.debug('entity_type name %', table)
+        logger.debug('dimension table name %', dim_table)
+
         # Call external service to get device data.
         metrics_json, rows = self.getAssets()
-        #metrics_TURBINE_ID, metrics_TEMPERATURE, metrics_PRESSURE, rows = self.getAssets()
 
         # Create Numpy array using Building Insights energy usage data
         response_data = {}
@@ -257,24 +228,16 @@ class DemoHTTPPreload(BasePreload):
 
         for o in others:
             logging.debug('metrics others %s ' %o)
-            #response_data[0] = np.random.normal(0,1,rows)
-            #response_data[0] = np.random.normal(0,1,rows)
-            #logging.debug('metrics data %s ' %response_data[m])
 
         for m in metrics:
             logging.debug('metrics  -- using str  %s ' %m )
             logging.debug('type is %s ' %type(m) )
-            #logging.debug('metrics  json value -- %s ' %metrics_json[ m ] )
 
             #  There is a bug in Analytics service that required caps for attributes
             # convert sqlalchemy.sql.elements.quoted_name to a string
             metrics_uppercase_str =  m.casefold().upper()
             logging.debug('metrics data m %s ' %metrics_uppercase_str )
             response_data[ m ] = np.array( metrics_json[ metrics_uppercase_str ] )
-            #logging.debug('metrics data %s ' %response_data[m.casefold().upper()) ])
-            '''
-            response_data[ m ] = np.array( metrics_json[ m ] )
-            '''
 
         for d in dates:
             logging.debug('dates %s ' %d)
@@ -292,17 +255,8 @@ class DemoHTTPPreload(BasePreload):
         '''
         # Create Numpy array using remaining entity metrics
         '''
-        #logging.debug("length metrics_TEMPERATURE %d" %len(metrics_TEMPERATURE) )
-        #logging.debug("length metrics_PRESSURE %d" %len(metrics_PRESSURE) )
         response_data['turbine_id'] = np.array( metrics_json['TURBINE_ID'] )
-        #response_data['TEMPERATURE'] = np.array( metrics_TEMPERATURE )
-        #response_data['PRESSURE'] = np.array( metrics_PRESSURE )
-        #response_data['devicetype'] = np.array(metrics_TURBINE_ID)
         response_data['deviceid'] = np.array( metrics_json['TURBINE_ID'] )
-        #response_data['eventtype'] = np.array(metrics_TURBINE_ID)
-        #response_data['turbine_id'] = np.array( metrics_json['TURBINE_ID'] )
-        #response_data['format'] = np.array(metrics_TURBINE_ID)
-        #response_data['logicalinterface_id'] = np.array(metrics_TURBINE_ID)
 
         '''
         # Create a timeseries dataframe with data received Building Insights
@@ -312,6 +266,7 @@ class DemoHTTPPreload(BasePreload):
         df = pd.DataFrame(data=response_data)
         logging.debug('Generated DF from response_data ===' )
         logging.debug( df.head() )
+        logging.debug(df.columns)
         df = df.rename(self.column_map, axis='columns')
         logging.debug('ReMapped DF ===' )
         logging.debug( df.head() )
@@ -338,22 +293,35 @@ class DemoHTTPPreload(BasePreload):
                     df[m] = None
 
         # Remove columns that are not required
-        df = df[required_cols]
+        df_metrics = df[required_cols]
         logging.debug('DF stripped to only required columns ===' )
-        logging.debug( df.head() )
+        logging.debug( df_metrics.head() )
 
-        # Write the dataframe to the IBM IOT Platform database table
-        self.write_frame(df=df,table_name=table)
-        kwargs ={
-            'table_name' : table,
-            'schema' : schema,
-            'row_count' : len(df.index)
+        # separate df for dimension
+        logging.debug('Setting columns for dimensional table')
+        required_cols = self.db.get_column_names(table=dim_table, schema=schema)
+        logging.debug('required_cols %s' % required_cols)
+
+        df_dim = df[required_cols]
+        logging.debug('DF dimension stripped to only required columns ===')
+        logging.debug(df_dim.head())
+
+        # Write the dataframe for metrics and dimension to the IBM IOT Platform database table
+        self.write_frame(df=df_metrics,table_name=table)
+        self.write_frame(df=df_dim, table_name=dim_table)
+
+        kwargs = {
+            'table_name': table,
+            'dimension_table': dim_table,
+            'schema': schema,
+            'row_count': len(df.index)
         }
         logging.debug('DF write_frame to table ===' )
         entity_type.trace_append(created_by=self,
                                  msg='Wrote data to table',
                                  log_method=logger.debug,
                                  **kwargs)
+
         return True
 
     @classmethod

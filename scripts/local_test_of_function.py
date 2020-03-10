@@ -87,6 +87,7 @@ To also register the functions and constants associated with the entity type, sp
 'publish_kpis' = True.
 '''
 entity.register(raise_error=False)
+# When creating a custom preload function you can register it by uncommenting the following lines
 # You must unregister_functions if you change the method signature or required inputs.
 #db.unregister_functions(['Issue455HTTPPreload'])
 #db.register_functions([Issue455HTTPPreload])

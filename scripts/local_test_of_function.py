@@ -66,9 +66,9 @@ entity = EntityType(entity_name,db,
                     }
                     )
 entity.make_dimension(entity_dimension_upper,
-                      Column('client',String(50)),
-                      Column('organization',String(50)),
-                      Column('function',String(50)),
+                      Column('CLIENT',String(50)),
+                      Column('ORGANIZATION',String(50)),
+                      Column('FUNCTION',String(50)),
                       **{ 'schema': db_schema}
                       )
 
@@ -106,14 +106,12 @@ view entity data
 print ("Read Table of new entity" )
 df = db.read_table(table_name=entity_name, schema=db_schema)
 print(df.head())
-print(df.columns)
 
 
 print ( "Read Table of new dimension" )
-print (entity_dimension)
+print(entity_dimension)
 df = db.read_table(table_name=entity_dimension, schema=db_schema)
 print(df.head())
-print(df.columns)
 
 print("Done registering  entity")
 

@@ -57,9 +57,7 @@ entity = EntityType(entity_name,db,
                     Column('PRESS_Y',Float()),
                     Column('TEMP_X',Float()),
                     Column('TEMP_Y',Float()),
-                    Issue455HTTPPreload(username = None,
-                                        password = None,
-                                        request='GET',
+                    Issue455HTTPPreload(request='GET',
                                         url="https://turbine-simulator.mybluemix.net/v1/api/reading",
                                         output_item = 'http_preload_done'),
                     **{
@@ -68,9 +66,9 @@ entity = EntityType(entity_name,db,
                     }
                     )
 entity.make_dimension(entity_dimension_upper,
-                      Column('CLIENT',String(50)),
-                      Column('ORGANIZATION',String(50)),
-                      Column('FUNCTION',String(50)),
+                      Column('client',String(50)),
+                      Column('organization',String(50)),
+                      Column('function',String(50)),
                       **{ 'schema': db_schema}
                       )
 
@@ -112,6 +110,7 @@ print(df.columns)
 
 
 print ( "Read Table of new dimension" )
+print (entity_dimension)
 df = db.read_table(table_name=entity_dimension, schema=db_schema)
 print(df.head())
 print(df.columns)

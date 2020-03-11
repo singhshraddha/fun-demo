@@ -25,7 +25,7 @@ class Issue455HTTPPreload(BasePreload):
 
     out_table_name = None
 
-    def __init__(self, username, password, request, url, headers = None, body = None, column_map = None, output_item  =
+    def __init__(self, request, url, headers = None, body = None, column_map = None, output_item  =
     'http_preload_done'):
 
         if body is None:
@@ -39,11 +39,6 @@ class Issue455HTTPPreload(BasePreload):
 
         super().__init__(dummy_items=[],output_item = output_item)
 
-        # create an instance variable with the same name as each arg
-        self.username = username
-        logging.debug('self.username %s' % self.username)
-        self.password = password
-        logging.debug('self.password %s' % self.password)
         if url == None:
             self.tenant = settings.BI_TENANT_ID
         else:
@@ -212,9 +207,6 @@ class Issue455HTTPPreload(BasePreload):
         # get dimension table name - to add dimension values to
         dim_table = entity_type.get_attributes_dict()['_dimension_table_name']
 
-        logger.debug('entity_type name %', table)
-        logger.debug('dimension table name %', dim_table)
-
         # Call external service to get device data.
         metrics_json, rows = self.getAssets()
 
@@ -250,9 +242,7 @@ class Issue455HTTPPreload(BasePreload):
         '''
         response_data[ 'client' ] =  ['client_name', 'client_name']
         response_data[ 'organization' ] =  ['org_name', 'org_name']
-        response_data['CLIENT'] = ['client_name', 'client_name']
-        response_data['ORGANIZATION'] = ['org_name', 'org_name']
-        response_data['FUNCTION'] = ['func_name_1', 'func_name_2']
+        response_data['function'] = ['func_1', 'func_2']
 
         '''
         # Create Numpy array using remaining entity metrics
@@ -343,23 +333,10 @@ class Issue455HTTPPreload(BasePreload):
         '''
         # define arguments that behave as function inputs
         inputs = []
-        inputs.append(ui.UISingle(name='username',
-                              datatype=str,
-                              description='Username for Building Insignts Instance',
-                              tags=['TEXT'],
-                              required=True
-                              ))
-        inputs.append(ui.UISingle(name='password',
-                              datatype=str,
-                              description='Password for Building Insignts Instance',
-                              tags=['TEXT'],
-                              required=True
-                              ))
         inputs.append(ui.UISingle(name='request',
                               datatype=str,
                               description='comma separated list of entity ids',
                               values=['GET','POST','PUT','DELETE']
-
                               ))
         inputs.append(ui.UISingle(name='url',
                                   datatype=str,

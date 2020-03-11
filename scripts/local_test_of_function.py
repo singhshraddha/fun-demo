@@ -89,8 +89,8 @@ To also register the functions and constants associated with the entity type, sp
 entity.register(raise_error=False)
 # When creating a custom preload function you can register it by uncommenting the following lines
 # You must unregister_functions if you change the method signature or required inputs.
-#db.unregister_functions(['Issue455HTTPPreload'])
-#db.register_functions([Issue455HTTPPreload])
+db.unregister_functions(['Issue455HTTPPreload'])
+db.register_functions([Issue455HTTPPreload])
 
 '''
 To test the execution of kpi calculations defined for the entity type locally
@@ -105,7 +105,7 @@ entity.exec_local_pipeline(**{'_production_mode': False})
 '''
 view entity data
 '''
-print ( "Read Table of new entity" )
+print ("Read Table of new entity" )
 df = db.read_table(table_name=entity_name, schema=db_schema)
 print(df.head())
 print(df.columns)

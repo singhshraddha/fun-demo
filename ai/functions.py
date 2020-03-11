@@ -248,8 +248,10 @@ class Issue455HTTPPreload(BasePreload):
         Set dimensional data
         hardcode for now
         '''
-        response_data[ 'CLIENT' ] =  ['Mariners Way MFG', 'Mariners Way MFG']
-        response_data[ 'ORGANIZATION' ] =  ['Production', 'Production']
+        response_data[ 'client' ] =  ['Mariners Way MFG', 'Mariners Way MFG']
+        response_data[ 'organization' ] =  ['Production', 'Production']
+        response_data['CLIENT'] = ['Mariners Way MFG', 'Mariners Way MFG']
+        response_data['ORGANIZATION'] = ['Production', 'Production']
         response_data[ 'FUNCTION' ] =  ['Line 1', 'Line 2']
 
         '''
@@ -301,6 +303,16 @@ class Issue455HTTPPreload(BasePreload):
         logging.debug('Setting columns for dimensional table')
         required_cols = self.db.get_column_names(table=dim_table, schema=schema)
         logging.debug('required_cols %s' % required_cols)
+        missing_cols = list(set(required_cols) - set(df.columns))
+        logging.debug('missing_cols %s' % missing_cols)
+        if len(missing_cols) > 0:
+            kwargs = {
+                'missing_cols': missing_cols
+            }
+        entity_type.trace_append(created_by=self,
+                                 msg='http data was missing columns. Adding values.',
+                                 log_method=logger.debug,
+                                 **kwargs)
 
         df_dim = df[required_cols]
         logging.debug('DF dimension stripped to only required columns ===')

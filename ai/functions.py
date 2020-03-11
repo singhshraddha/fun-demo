@@ -248,11 +248,11 @@ class Issue455HTTPPreload(BasePreload):
         Set dimensional data
         hardcode for now
         '''
-        response_data[ 'client' ] =  ['Mariners Way MFG', 'Mariners Way MFG']
-        response_data[ 'organization' ] =  ['Production', 'Production']
-        response_data['CLIENT'] = ['Mariners Way MFG', 'Mariners Way MFG']
-        response_data['ORGANIZATION'] = ['Production', 'Production']
-        response_data[ 'FUNCTION' ] =  ['Line 1', 'Line 2']
+        response_data[ 'client' ] =  ['client_name', 'client_name']
+        response_data[ 'organization' ] =  ['org_name', 'org_name']
+        response_data['CLIENT'] = ['client_name', 'client_name']
+        response_data['ORGANIZATION'] = ['org_name', 'org_name']
+        response_data['FUNCTION'] = ['func_name_1', 'func_name_2']
 
         '''
         # Create Numpy array using remaining entity metrics

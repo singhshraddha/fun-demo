@@ -1,6 +1,5 @@
 import json
 import logging
-from ai.function_dimension import SampleDimensionPreload_SS
 from iotfunctions.db import Database
 from iotfunctions.enginelog import EngineLogging
 
@@ -30,7 +29,7 @@ db = Database(credentials = credentials)
 2. To do anything with IoT Platform Analytics, you will need one or more entity type.
 This example assumes that the entity to which we are adding dimensions already exists
 '''
-entity_name = 'issue_637_blank'
+entity_name = 'issue_455_blank_script'
 entity_type = db.get_entity_type(name=entity_name)
 
 # get dimension table name - to add dimension values to
@@ -65,12 +64,12 @@ Any other dimension name other than the one above will generate random values
 '''
 db.drop_table(dim_table_name, schema=schema)
 entity_type.make_dimension(dim_table_name,
-                           Column('company', String(50))
+                           Column('company', String(50)),
+                           Column('status', String(50)),
+                           Column('operator', String(50)),
                            **{'schema': schema})
 
 entity_type.register()
-
-entity_type._functions.extend([SampleDimensionPreload_SS()])
 
 '''
 To test the execution of kpi calculations defined for the entity type locally
@@ -81,8 +80,8 @@ lake. Instead kpi data is written to the local filesystem in csv form.
 '''
 # entity_type.exec_local_pipeline(**{'_production_mode': False})
 
-ef = self.db.read_table(entity_type.logical_name, schema=schema, columns=[entity_type._entity_id])
-        ids = set(ef[self._entity_id].unique())
-entity_type.generate_dimension_data(entities=entities)
+ef = db.read_table(entity_type.logical_name, schema=schema, columns=[entity_type._entity_id])
+ids = set(ef[entity_type._entity_id].unique())
+entity_type.generate_dimension_data(entities=ids)
 
 

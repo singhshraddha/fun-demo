@@ -205,7 +205,7 @@ class Issue455HTTPPreload(BasePreload):
         schema = entity_type._db_schema
 
         # get dimension table name - to add dimension values to
-        dim_table = entity_type.get_attributes_dict()['_dimension_table_name']
+        dim_table = (entity_type.get_attributes_dict()['_dimension_table_name']).lower()
 
         # Call external service to get device data.
         metrics_json, rows = self.getAssets()
@@ -240,9 +240,9 @@ class Issue455HTTPPreload(BasePreload):
         Set dimensional data
         hardcode for now
         '''
-        response_data[ 'CLIENT' ] =  ['client_name', 'client']
-        response_data[ 'ORGANIZATION' ] =  ['org_name', 'org_name']
-        response_data['FUNCTION'] = ['func_1', 'func_2']
+        response_data[ 'client' ] =  ['client_name', 'client_name']
+        response_data[ 'organization' ] =  ['org_name', 'org_name']
+        response_data['dim_function'] = ['func_1', 'func_2']
 
         '''
         # Create Numpy array using remaining entity metrics

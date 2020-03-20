@@ -42,9 +42,9 @@ class SampleDimensionPreload_random(BasePreload):
 
         # get dimension table name - to add dimension values to
         try:
-            self.dim_table_name = (entity_type.get_attributes_dict()['_dimension_table_name']).lower()
+            self.dim_table_name = (entity_type.get_attributes_dict()['_dimension_table_name']).upper()
         except:
-            self.dim_table_name = entity_type.logical_name + '_dimension'
+            self.dim_table_name = entity_type.logical_name + '_DIMENSION'
 
         msg = 'Dimension table name: ' + str(self.dim_table_name)
         logging.debug(msg)
